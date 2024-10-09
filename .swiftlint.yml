@@ -14,8 +14,8 @@ opt_in_rules:
 included: # 린트 검사에 포함할 파일 경로
     - Moolog
 excluded: # 린트 과정에서 무시할 파일 경로. `included`보다 우선순위 높음
-    - Moolog/Sources/App/AppDelegate.swift
-    - Moolog/Sources/App/SceneDelegate.swift
+    - Moolog/Utils/App/AppDelegate.swift
+    - Moolog/Utils/App/SceneDelegate.swift
     
 force_cast: warning # 강제 타입 캐스팅
 force_try:
