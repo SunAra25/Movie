@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9A2E9D42CB6B20200F99900 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D32CB6B20200F99900 /* RxCocoa */; };
+		C9A2E9D62CB6B20200F99900 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D52CB6B20200F99900 /* RxSwift */; };
+		C9A2E9D92CB6B26000F99900 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D82CB6B26000F99900 /* Differentiator */; };
+		C9A2E9DB2CB6B26000F99900 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9DA2CB6B26000F99900 /* RxDataSources */; };
+		C9A2E9DE2CB6B2B800F99900 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9DD2CB6B2B800F99900 /* Kingfisher */; };
+		C9A2E9E12CB6B35900F99900 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9E02CB6B35900F99900 /* RealmSwift */; };
+		C9A2E9E42CB6B3C200F99900 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9E32CB6B3C200F99900 /* SnapKit */; };
+		C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */; };
 		C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */; };
 		C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */; };
 		C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3592CB6574A00EBAE11 /* ViewController.swift */; };
@@ -15,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9FBC3522CB6574A00EBAE11 /* Moolog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moolog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +38,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A2E9E12CB6B35900F99900 /* RealmSwift in Frameworks */,
+				C9A2E9D62CB6B20200F99900 /* RxSwift in Frameworks */,
+				C9A2E9DB2CB6B26000F99900 /* RxDataSources in Frameworks */,
+				C9A2E9E42CB6B3C200F99900 /* SnapKit in Frameworks */,
+				C9A2E9D92CB6B26000F99900 /* Differentiator in Frameworks */,
+				C9A2E9D42CB6B20200F99900 /* RxCocoa in Frameworks */,
+				C9A2E9DE2CB6B2B800F99900 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +54,7 @@
 		C9FBC3492CB6574A00EBAE11 = {
 			isa = PBXGroup;
 			children = (
+				C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */,
 				C9FBC3542CB6574A00EBAE11 /* Moolog */,
 				C9FBC3532CB6574A00EBAE11 /* Products */,
 			);
@@ -78,8 +95,18 @@
 			buildRules = (
 			);
 			dependencies = (
+				C9A2E9E72CB6B54900F99900 /* PBXTargetDependency */,
 			);
 			name = Moolog;
+			packageProductDependencies = (
+				C9A2E9D32CB6B20200F99900 /* RxCocoa */,
+				C9A2E9D52CB6B20200F99900 /* RxSwift */,
+				C9A2E9D82CB6B26000F99900 /* Differentiator */,
+				C9A2E9DA2CB6B26000F99900 /* RxDataSources */,
+				C9A2E9DD2CB6B2B800F99900 /* Kingfisher */,
+				C9A2E9E02CB6B35900F99900 /* RealmSwift */,
+				C9A2E9E32CB6B3C200F99900 /* SnapKit */,
+			);
 			productName = Moolog;
 			productReference = C9FBC3522CB6574A00EBAE11 /* Moolog.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +135,14 @@
 				Base,
 			);
 			mainGroup = C9FBC3492CB6574A00EBAE11;
+			packageReferences = (
+				C9A2E9D22CB6B20200F99900 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				C9A2E9D72CB6B26000F99900 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				C9A2E9DC2CB6B2B800F99900 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C9A2E9DF2CB6B35900F99900 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				C9A2E9E22CB6B3C200F99900 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				C9A2E9E52CB6B52400F99900 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = C9FBC3532CB6574A00EBAE11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */,
 				C9FBC35F2CB6574A00EBAE11 /* Assets.xcassets in Resources */,
 				C9FBC3622CB6574A00EBAE11 /* Base in Resources */,
 			);
@@ -141,6 +177,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9A2E9E72CB6B54900F99900 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = C9A2E9E62CB6B54900F99900 /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C9FBC3602CB6574A00EBAE11 /* LaunchScreen.storyboard */ = {
@@ -359,6 +402,100 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9A2E9D22CB6B20200F99900 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
+		C9A2E9D72CB6B26000F99900 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		C9A2E9DC2CB6B2B800F99900 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.3;
+			};
+		};
+		C9A2E9DF2CB6B35900F99900 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.54.0;
+			};
+		};
+		C9A2E9E22CB6B3C200F99900 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		C9A2E9E52CB6B52400F99900 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.57.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9A2E9D32CB6B20200F99900 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9D22CB6B20200F99900 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C9A2E9D52CB6B20200F99900 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9D22CB6B20200F99900 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		C9A2E9D82CB6B26000F99900 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9D72CB6B26000F99900 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		C9A2E9DA2CB6B26000F99900 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9D72CB6B26000F99900 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		C9A2E9DD2CB6B2B800F99900 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9DC2CB6B2B800F99900 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		C9A2E9E02CB6B35900F99900 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9DF2CB6B35900F99900 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		C9A2E9E32CB6B3C200F99900 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9E22CB6B3C200F99900 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		C9A2E9E62CB6B54900F99900 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A2E9E52CB6B52400F99900 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9FBC34A2CB6574A00EBAE11 /* Project object */;
 }
