@@ -27,7 +27,7 @@ class BaseNavigationViewController: BaseViewController {
             for: .default
         )
         
-        navigationItem.backBarButtonItem?.tintColor = .black
+        navigationItem.backBarButtonItem?.tintColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: nil,
             style: .plain,
