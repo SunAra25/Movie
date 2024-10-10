@@ -27,7 +27,6 @@
 		C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */; };
 		C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */; };
 		C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */; };
-		C9A2E9FF2CB6C38500F99900 /* NetworkEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */; };
 		C9A2EA0A2CB6C49700F99900 /* MediaViewModel in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA092CB6C49700F99900 /* MediaViewModel */; };
 		C9A2EA0D2CB6C4A900F99900 /* MediaController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA0C2CB6C4A900F99900 /* MediaController */; };
 		C9A2EA102CB6C4B300F99900 /* MediaCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA0F2CB6C4B300F99900 /* MediaCell */; };
@@ -62,7 +61,6 @@
 		C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnumEmptyFile; sourceTree = "<group>"; };
 		C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ModelEmptyFile; sourceTree = "<group>"; };
-		C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetworkEmptyFile; sourceTree = "<group>"; };
 		C9A2EA092CB6C49700F99900 /* MediaViewModel */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaViewModel; sourceTree = "<group>"; };
 		C9A2EA0C2CB6C4A900F99900 /* MediaController */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaController; sourceTree = "<group>"; };
 		C9A2EA0F2CB6C4B300F99900 /* MediaCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaCell; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		C9A2E9EC2CB6C21400F99900 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -524,7 +521,6 @@
 				C9A2EA342CB6C60500F99900 /* TrendEmptyCell in Resources */,
 				C9A2EA202CB6C52A00F99900 /* FavViewModel in Resources */,
 				C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */,
-				C9A2E9FF2CB6C38500F99900 /* NetworkEmptyFile in Resources */,
 				C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */,
 				C9A2EA102CB6C4B300F99900 /* MediaCell in Resources */,
 			);
