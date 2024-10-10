@@ -17,7 +17,6 @@
 		C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */; };
 		C9A2E9F12CB6C2C100F99900 /* ConstantEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F02CB6C2C100F99900 /* ConstantEmptyFile */; };
 		C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */; };
-		C9A2E9F72CB6C2F900F99900 /* ProtocolEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F62CB6C2F900F99900 /* ProtocolEmptyFile */; };
 		C9A2E9FA2CB6C34100F99900 /* ExtensionEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */; };
 		C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */; };
 		C9A2E9FF2CB6C38500F99900 /* NetworkEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */; };
@@ -36,6 +35,7 @@
 		C9A2EA302CB6C5E800F99900 /* TrendEmptyController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */; };
 		C9A2EA342CB6C60500F99900 /* TrendEmptyCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA332CB6C60500F99900 /* TrendEmptyCell */; };
 		C9A2EA372CB6C62500F99900 /* EmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA362CB6C62500F99900 /* EmptyFile */; };
+		C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */; };
 		C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */; };
 		C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */; };
 		C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3592CB6574A00EBAE11 /* ViewController.swift */; };
@@ -47,7 +47,6 @@
 		C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9A2E9F02CB6C2C100F99900 /* ConstantEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConstantEmptyFile; sourceTree = "<group>"; };
 		C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnumEmptyFile; sourceTree = "<group>"; };
-		C9A2E9F62CB6C2F900F99900 /* ProtocolEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ProtocolEmptyFile; sourceTree = "<group>"; };
 		C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExtensionEmptyFile; sourceTree = "<group>"; };
 		C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ModelEmptyFile; sourceTree = "<group>"; };
 		C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetworkEmptyFile; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendEmptyController; sourceTree = "<group>"; };
 		C9A2EA332CB6C60500F99900 /* TrendEmptyCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendEmptyCell; sourceTree = "<group>"; };
 		C9A2EA362CB6C62500F99900 /* EmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = EmptyFile; sourceTree = "<group>"; };
+		C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9FBC3522CB6574A00EBAE11 /* Moolog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moolog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		C9A2E9F52CB6C2E300F99900 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2E9F62CB6C2F900F99900 /* ProtocolEmptyFile */,
+				C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -490,7 +490,6 @@
 				C9A2E9FA2CB6C34100F99900 /* ExtensionEmptyFile in Resources */,
 				C9A2EA1C2CB6C50A00F99900 /* SearchController in Resources */,
 				C9A2EA152CB6C4E800F99900 /* SearchViewModel in Resources */,
-				C9A2E9F72CB6C2F900F99900 /* ProtocolEmptyFile in Resources */,
 				C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */,
 				C9FBC35F2CB6574A00EBAE11 /* Assets.xcassets in Resources */,
 				C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */,
@@ -518,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */,
 				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
 				C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */,
 				C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */,
