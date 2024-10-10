@@ -17,7 +17,6 @@
 		C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */; };
 		C9A2E9F12CB6C2C100F99900 /* ConstantEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F02CB6C2C100F99900 /* ConstantEmptyFile */; };
 		C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */; };
-		C9A2E9FA2CB6C34100F99900 /* ExtensionEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */; };
 		C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */; };
 		C9A2E9FF2CB6C38500F99900 /* NetworkEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */; };
 		C9A2EA032CB6C3AC00F99900 /* BaseEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA022CB6C3AC00F99900 /* BaseEmptyFile */; };
@@ -47,7 +46,6 @@
 		C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9A2E9F02CB6C2C100F99900 /* ConstantEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConstantEmptyFile; sourceTree = "<group>"; };
 		C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnumEmptyFile; sourceTree = "<group>"; };
-		C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExtensionEmptyFile; sourceTree = "<group>"; };
 		C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ModelEmptyFile; sourceTree = "<group>"; };
 		C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetworkEmptyFile; sourceTree = "<group>"; };
 		C9A2EA022CB6C3AC00F99900 /* BaseEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = BaseEmptyFile; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		C9A2E9F82CB6C32400F99900 /* Extension+ */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */,
 			);
 			path = "Extension+";
 			sourceTree = "<group>";
@@ -487,7 +484,6 @@
 				C9A2EA372CB6C62500F99900 /* EmptyFile in Resources */,
 				C9A2EA0A2CB6C49700F99900 /* MediaViewModel in Resources */,
 				C9A2EA0D2CB6C4A900F99900 /* MediaController in Resources */,
-				C9A2E9FA2CB6C34100F99900 /* ExtensionEmptyFile in Resources */,
 				C9A2EA1C2CB6C50A00F99900 /* SearchController in Resources */,
 				C9A2EA152CB6C4E800F99900 /* SearchViewModel in Resources */,
 				C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */,
