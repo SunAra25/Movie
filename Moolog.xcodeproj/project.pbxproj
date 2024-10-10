@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084CD932CB7F39500EC59C2 /* ImageButton.swift */; };
 		C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E292CB7B65100299564 /* UIFont+.swift */; };
 		C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */; };
 		C0C34E2F2CB7B6B400299564 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */; };
@@ -39,7 +40,6 @@
 		C9A2EA2B2CB6C5CD00F99900 /* TrendVM in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA2A2CB6C5CD00F99900 /* TrendVM */; };
 		C9A2EA302CB6C5E800F99900 /* TrendEmptyController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */; };
 		C9A2EA342CB6C60500F99900 /* TrendEmptyCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA332CB6C60500F99900 /* TrendEmptyCell */; };
-		C9A2EA372CB6C62500F99900 /* EmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA362CB6C62500F99900 /* EmptyFile */; };
 		C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */; };
 		C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */; };
 		C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */; };
@@ -49,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C084CD932CB7F39500EC59C2 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		C0C34E292CB7B65100299564 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		C9A2EA2A2CB6C5CD00F99900 /* TrendVM */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendVM; sourceTree = "<group>"; };
 		C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendEmptyController; sourceTree = "<group>"; };
 		C9A2EA332CB6C60500F99900 /* TrendEmptyCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendEmptyCell; sourceTree = "<group>"; };
-		C9A2EA362CB6C62500F99900 /* EmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = EmptyFile; sourceTree = "<group>"; };
 		C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9FBC3522CB6574A00EBAE11 /* Moolog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moolog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		C9A2EA352CB6C61E00F99900 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA362CB6C62500F99900 /* EmptyFile */,
+				C084CD932CB7F39500EC59C2 /* ImageButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -507,7 +507,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9A2EA372CB6C62500F99900 /* EmptyFile in Resources */,
 				C0C34E2F2CB7B6B400299564 /* Pretendard-Bold.otf in Resources */,
 				C9A2EA0A2CB6C49700F99900 /* MediaViewModel in Resources */,
 				C9A2EA0D2CB6C4A900F99900 /* MediaController in Resources */,
@@ -545,6 +544,7 @@
 				C0C34E352CB7E88A00299564 /* BaseNavigationViewController.swift in Sources */,
 				C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */,
 				C0C34E392CB7E9CC00299564 /* BaseCollectionViewCell.swift in Sources */,
+				C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */,
 				C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */,
 				C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */,
 				C0C34E332CB7E63E00299564 /* BaseViewController.swift in Sources */,
