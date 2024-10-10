@@ -26,11 +26,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUI() {
-        
-    }
+    func setUI() { }
     
-    func setLayout() {
-        
-    }
+    func setLayout() { }
 }
