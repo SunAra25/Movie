@@ -1,0 +1,61 @@
+//
+//  TabBarController.swift
+//  Moolog
+//
+//  Created by 아라 on 10/10/24.
+//
+
+import UIKit
+
+final class TabBarController: UITabBarController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUI()
+    }
+
+    private func setUI() {
+        tabBar.backgroundColor = .black
+
+        UITabBar.appearance().tintColor = .highlight
+        UITabBar.appearance().unselectedItemTintColor = .white
+        
+        let appearance = UITabBarItem.appearance()
+        appearance.setTitleTextAttributes(
+            [.foregroundColor: UIColor.clear],
+            for: .normal
+        )
+        
+        appearance.setTitleTextAttributes(
+            [.foregroundColor: UIColor.clear],
+            for: .selected
+        )
+        
+        let trendVC = UIViewController()
+        let searchVC = UIViewController()
+        let favoriteVC = UIViewController()
+        
+        trendVC.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "house"),
+            tag: 0
+        )
+        
+        searchVC.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "heart.fill"),
+            tag: 1
+        )
+        
+        favoriteVC.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(systemName: "magnifyingglass"),
+            tag: 2
+        )
+        
+        viewControllers = [
+            trendVC,
+            searchVC,
+            favoriteVC
+        ]
+    }
+}
