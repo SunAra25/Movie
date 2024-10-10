@@ -12,6 +12,9 @@ enum Constant {
         case screenWidth
         case horiSpacing
         case vertiSpacing
+        case buttonHeight
+        case searchBarHeight
+        case searchBarInset
         
         var value: CGFloat {
             switch self {
@@ -20,6 +23,12 @@ enum Constant {
             case .horiSpacing:
                 return CGFloat(16)
             case .vertiSpacing:
+                return CGFloat(12)
+            case .buttonHeight:
+                return CGFloat(48)
+            case .searchBarHeight:
+                return CGFloat(44)
+            case .searchBarInset:
                 return CGFloat(12)
             }
         }
