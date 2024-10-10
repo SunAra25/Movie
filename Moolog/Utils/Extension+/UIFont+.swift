@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIFont {
-    public enum FontType: String{
+    public enum FontType: String {
         case bold = "Bold"
         case medium = "Medium"
     }
