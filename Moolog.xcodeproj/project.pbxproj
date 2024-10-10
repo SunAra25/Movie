@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E292CB7B65100299564 /* UIFont+.swift */; };
+		C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */; };
+		C0C34E2F2CB7B6B400299564 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */; };
+		C0C34E312CB7BDF800299564 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E302CB7BDF800299564 /* Constant.swift */; };
 		C9A2E9D42CB6B20200F99900 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D32CB6B20200F99900 /* RxCocoa */; };
 		C9A2E9D62CB6B20200F99900 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D52CB6B20200F99900 /* RxSwift */; };
 		C9A2E9D92CB6B26000F99900 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D82CB6B26000F99900 /* Differentiator */; };
@@ -15,9 +19,7 @@
 		C9A2E9E12CB6B35900F99900 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9E02CB6B35900F99900 /* RealmSwift */; };
 		C9A2E9E42CB6B3C200F99900 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9E32CB6B3C200F99900 /* SnapKit */; };
 		C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */; };
-		C9A2E9F12CB6C2C100F99900 /* ConstantEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F02CB6C2C100F99900 /* ConstantEmptyFile */; };
 		C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */; };
-		C9A2E9FA2CB6C34100F99900 /* ExtensionEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */; };
 		C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */; };
 		C9A2E9FF2CB6C38500F99900 /* NetworkEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */; };
 		C9A2EA032CB6C3AC00F99900 /* BaseEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA022CB6C3AC00F99900 /* BaseEmptyFile */; };
@@ -44,10 +46,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0C34E292CB7B65100299564 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		C0C34E302CB7BDF800299564 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		C9A2E9F02CB6C2C100F99900 /* ConstantEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConstantEmptyFile; sourceTree = "<group>"; };
 		C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnumEmptyFile; sourceTree = "<group>"; };
-		C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExtensionEmptyFile; sourceTree = "<group>"; };
 		C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ModelEmptyFile; sourceTree = "<group>"; };
 		C9A2E9FE2CB6C38500F99900 /* NetworkEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetworkEmptyFile; sourceTree = "<group>"; };
 		C9A2EA022CB6C3AC00F99900 /* BaseEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = BaseEmptyFile; sourceTree = "<group>"; };
@@ -93,9 +97,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0C34E2B2CB7B68600299564 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */,
+				C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		C9A2E9EA2CB6C20600F99900 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C0C34E2B2CB7B68600299564 /* Font */,
 				C9FBC35E2CB6574A00EBAE11 /* Assets.xcassets */,
 				C9FBC3602CB6574A00EBAE11 /* LaunchScreen.storyboard */,
 				C9FBC3632CB6574A00EBAE11 /* Info.plist */,
@@ -150,7 +164,7 @@
 		C9A2E9EF2CB6C2AE00F99900 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2E9F02CB6C2C100F99900 /* ConstantEmptyFile */,
+				C0C34E302CB7BDF800299564 /* Constant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -174,7 +188,7 @@
 		C9A2E9F82CB6C32400F99900 /* Extension+ */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2E9F92CB6C34100F99900 /* ExtensionEmptyFile */,
+				C0C34E292CB7B65100299564 /* UIFont+.swift */,
 			);
 			path = "Extension+";
 			sourceTree = "<group>";
@@ -485,18 +499,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A2EA372CB6C62500F99900 /* EmptyFile in Resources */,
+				C0C34E2F2CB7B6B400299564 /* Pretendard-Bold.otf in Resources */,
 				C9A2EA0A2CB6C49700F99900 /* MediaViewModel in Resources */,
 				C9A2EA0D2CB6C4A900F99900 /* MediaController in Resources */,
-				C9A2E9FA2CB6C34100F99900 /* ExtensionEmptyFile in Resources */,
 				C9A2EA1C2CB6C50A00F99900 /* SearchController in Resources */,
 				C9A2EA152CB6C4E800F99900 /* SearchViewModel in Resources */,
 				C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */,
 				C9FBC35F2CB6574A00EBAE11 /* Assets.xcassets in Resources */,
 				C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */,
-				C9A2E9F12CB6C2C100F99900 /* ConstantEmptyFile in Resources */,
 				C9A2EA192CB6C4FC00F99900 /* SearchCell in Resources */,
 				C9A2EA052CB6C3D500F99900 /* TabEmptyFile in Resources */,
 				C9A2EA2B2CB6C5CD00F99900 /* TrendVM in Resources */,
+				C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */,
 				C9FBC3622CB6574A00EBAE11 /* Base in Resources */,
 				C9A2EA302CB6C5E800F99900 /* TrendEmptyController in Resources */,
 				C9A2EA242CB6C56000F99900 /* FavoriteController in Resources */,
@@ -519,8 +533,10 @@
 			files = (
 				C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */,
 				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
+				C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */,
 				C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */,
 				C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */,
+				C0C34E312CB7BDF800299564 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
