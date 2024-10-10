@@ -13,7 +13,7 @@ extension UIFont {
         case medium = "Medium"
     }
     
-    static func Pretendard(
+    static func pretendard(
         type: FontType,
         size: CGFloat
     ) -> UIFont? {
@@ -25,37 +25,37 @@ extension UIFont {
 }
 
 extension UIFont {
-    static let head = UIFont.Pretendard(
+    static let head = UIFont.pretendard(
         type: .bold,
         size: 20
     )
     
-    static let sub = UIFont.Pretendard(
+    static let sub = UIFont.pretendard(
         type: .bold,
         size: 14
     )
     
-    static let title = UIFont.Pretendard(
+    static let title = UIFont.pretendard(
         type: .bold,
         size: 16
     )
     
-    static let body1 = UIFont.Pretendard(
+    static let body1 = UIFont.pretendard(
         type: .medium,
         size: 16
     )
     
-    static let body2 = UIFont.Pretendard(
+    static let body2 = UIFont.pretendard(
         type: .medium,
         size: 13
     )
     
-    static let caption = UIFont.Pretendard(
+    static let caption = UIFont.pretendard(
         type: .medium,
         size: 12
     )
     
-    static let button = UIFont.Pretendard(
+    static let button = UIFont.pretendard(
         type: .bold,
         size: 15
     )
