@@ -25,7 +25,7 @@ protocol TargetType {
     /// HTTP request header ex) Authorization
     var header: [String: String] { get }
     /// get을 제외한 통신을 할 때 사용할 body
-    var body: [String: Any] { get }
+    var body: [String: Any]? { get }
     /// 서버에 request 보낼 때 어떤 작업을 요청하는지 의도를 담은
     var method: HTTPMethod { get }
 }
@@ -55,6 +55,12 @@ extension TargetType {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         urlRequest.allHTTPHeaderFields = header
+        
+        if let body = body,
+            method != .get {
+            urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body)
+        }
+        
         return urlRequest
     }
 }
