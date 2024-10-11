@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084CD932CB7F39500EC59C2 /* ImageButton.swift */; };
 		C0925C062CB90688007EF2D5 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C052CB90688007EF2D5 /* URLConstants.swift */; };
+		C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C0D2CB93737007EF2D5 /* Header.swift */; };
 		C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E292CB7B65100299564 /* UIFont+.swift */; };
 		C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */; };
 		C0C34E2F2CB7B6B400299564 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */; };
@@ -54,6 +55,7 @@
 		C084CD932CB7F39500EC59C2 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		C0925C052CB90688007EF2D5 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		C0925C0D2CB93737007EF2D5 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		C0C34E292CB7B65100299564 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				C98CD6F02CB81EAB005361D5 /* TargetType.swift */,
 				C98CD6F22CB81FC4005361D5 /* HTTPMethod.swift */,
 				C0925C052CB90688007EF2D5 /* URLConstants.swift */,
+				C0925C0D2CB93737007EF2D5 /* Header.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */,
 				C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */,
 				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
 				C98CD6F32CB81FC4005361D5 /* HTTPMethod.swift in Sources */,
