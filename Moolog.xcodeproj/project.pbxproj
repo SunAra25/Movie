@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		C084CD932CB7F39500EC59C2 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		C0C34E292CB7B65100299564 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 				C9FBC35E2CB6574A00EBAE11 /* Assets.xcassets */,
 				C9FBC3602CB6574A00EBAE11 /* LaunchScreen.storyboard */,
 				C9FBC3632CB6574A00EBAE11 /* Info.plist */,
+				C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -579,6 +581,7 @@
 /* Begin XCBuildConfiguration section */
 		C9FBC3642CB6574A00EBAE11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -642,6 +645,7 @@
 		};
 		C9FBC3652CB6574A00EBAE11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -698,6 +702,7 @@
 		};
 		C9FBC3672CB6574A00EBAE11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -730,6 +735,7 @@
 		};
 		C9FBC3682CB6574A00EBAE11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
