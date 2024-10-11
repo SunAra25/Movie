@@ -10,7 +10,7 @@ import Foundation
 enum Router {
     case trendingMovie
     case trendingTV
-    case searchMovie(target: String)
+    case searchMovie(target: String, page: Int)
     case credits(movieID: Int)
     case similarMovie(movieID: Int)
     case detail(movieID: Int)
@@ -37,7 +37,7 @@ extension Router: TargetType {
             return URLConstant.trendingMovie
         case .trendingTV:
             return URLConstant.trendingTV
-        case .searchMovie(let target):
+        case .searchMovie:
             return URLConstant.searchMovie
         case .credits(let movieID):
             return URLConstant.movie + "/\(movieID)" + URLConstant.credits
@@ -49,7 +49,16 @@ extension Router: TargetType {
     }
     
     var params: [String: Any] {
-        return [:]
+        switch self {
+        case .searchMovie(let target, let page):
+            return [
+                "language": "ko-KR",
+                "query": target,
+                "include_adult": true,
+                "page": "\(page)"
+            ]
+        default: return ["language": "ko-KR"]
+        }
     }
     
     var header: [String: String] {
