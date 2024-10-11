@@ -11,6 +11,7 @@
 		C0925C062CB90688007EF2D5 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C052CB90688007EF2D5 /* URLConstants.swift */; };
 		C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C0D2CB93737007EF2D5 /* Header.swift */; };
 		C0925C102CB93825007EF2D5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C0F2CB93825007EF2D5 /* Router.swift */; };
+		C0925C122CB93953007EF2D5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C112CB93953007EF2D5 /* NetworkManager.swift */; };
 		C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E292CB7B65100299564 /* UIFont+.swift */; };
 		C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */; };
 		C0C34E2F2CB7B6B400299564 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */; };
@@ -58,6 +59,7 @@
 		C0925C052CB90688007EF2D5 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		C0925C0D2CB93737007EF2D5 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		C0925C0F2CB93825007EF2D5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C0925C112CB93953007EF2D5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C0C34E292CB7B65100299564 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		C0C34E2D2CB7B6B400299564 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				C0925C052CB90688007EF2D5 /* URLConstants.swift */,
 				C0925C0D2CB93737007EF2D5 /* Header.swift */,
 				C0925C0F2CB93825007EF2D5 /* Router.swift */,
+				C0925C112CB93953007EF2D5 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0925C122CB93953007EF2D5 /* NetworkManager.swift in Sources */,
 				C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */,
 				C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */,
 				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
