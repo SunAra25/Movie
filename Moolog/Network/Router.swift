@@ -34,17 +34,23 @@ extension Router: TargetType {
     var path: String {
         switch self {
         case .trendingMovie:
-            return URLConstant.trendingMovie
+            return URLConstant.version + URLConstant.trendingMovie
         case .trendingTV:
-            return URLConstant.trendingTV
+            return URLConstant.version + URLConstant.trendingTV
         case .searchMovie:
-            return URLConstant.searchMovie
+            return URLConstant.version + URLConstant.searchMovie
         case .credits(let movieID):
-            return URLConstant.movie + "/\(movieID)" + URLConstant.credits
+            return URLConstant.version 
+            + URLConstant.movie
+            + "/\(movieID)"
+            + URLConstant.credits
         case .similarMovie(let movieID):
-            return URLConstant.movie + "/\(movieID)" + URLConstant.similar
+            return URLConstant.version
+            + URLConstant.movie
+            + "/\(movieID)"
+            + URLConstant.similar
         case .detail(let movieID):
-            return URLConstant.movie + "/\(movieID)"
+            return URLConstant.version + URLConstant.movie + "/\(movieID)"
         }
     }
     

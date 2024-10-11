@@ -17,14 +17,15 @@ struct URLConstant {
     
     private init() { }
     
+    static let version = "/3"
     static let trending = "/trending"
     static let movie = "/movie"
     static let search = "/search"
     static let credits = "/credits"
     static let similar = "/similar"
     
-    static let trendingMovie = URLConstant.trending + URLConstant.movie
-    static let trendingTV = URLConstant.trending + "/tv"
+    static let trendingMovie = URLConstant.trending + URLConstant.movie + "/day"
+    static let trendingTV = URLConstant.trending + "/tv" + "/day"
     
     static let searchMovie = URLConstant.search + URLConstant.movie
 }
