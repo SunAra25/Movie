@@ -18,10 +18,9 @@ final class MediaTableView: BaseView {
             forCellReuseIdentifier: MediaTableViewCell.identifier
         )
         view.register(
-            MediaHeaderView.self,
-            forHeaderFooterViewReuseIdentifier: MediaHeaderView.identifier
+            MediaTableHeaderCell.self,
+            forCellReuseIdentifier: MediaTableHeaderCell.identifier
         )
-        view.rowHeight = 110
         return view
     }()
     
