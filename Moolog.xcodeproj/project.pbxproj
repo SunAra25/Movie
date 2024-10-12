@@ -11,6 +11,7 @@
 		A0221B092CB9330200FCFE9F /* RecentKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B082CB9330200FCFE9F /* RecentKeyword.swift */; };
 		A0221B0B2CB935B200FCFE9F /* FavoriteMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0A2CB935B200FCFE9F /* FavoriteMovieRepository.swift */; };
 		A0221B0D2CBA285D00FCFE9F /* RecentKeywordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0C2CBA285D00FCFE9F /* RecentKeywordRepository.swift */; };
+		A0221B102CBA792900FCFE9F /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0F2CBA792900FCFE9F /* FileStorage.swift */; };
 		C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084CD932CB7F39500EC59C2 /* ImageButton.swift */; };
 		C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E292CB7B65100299564 /* UIFont+.swift */; };
 		C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */; };
@@ -58,6 +59,7 @@
 		A0221B082CB9330200FCFE9F /* RecentKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeyword.swift; sourceTree = "<group>"; };
 		A0221B0A2CB935B200FCFE9F /* FavoriteMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieRepository.swift; sourceTree = "<group>"; };
 		A0221B0C2CBA285D00FCFE9F /* RecentKeywordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordRepository.swift; sourceTree = "<group>"; };
+		A0221B0F2CBA792900FCFE9F /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		C084CD932CB7F39500EC59C2 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		C0C34E292CB7B65100299564 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 			path = DB;
 			sourceTree = "<group>";
 		};
+		A0221B0E2CBA790C00FCFE9F /* FileStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A0221B0F2CBA792900FCFE9F /* FileStorage.swift */,
+			);
+			path = FileStorage;
+			sourceTree = "<group>";
+		};
 		C0C34E2B2CB7B68600299564 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 				C9A2EA352CB6C61E00F99900 /* CustomView */,
 				C9A2E9F22CB6C2C800F99900 /* Enum */,
 				C9A2E9F82CB6C32400F99900 /* Extension+ */,
+				A0221B0E2CBA790C00FCFE9F /* FileStorage */,
 				C9A2E9FB2CB6C35F00F99900 /* Model */,
 				C9A2E9F52CB6C2E300F99900 /* Protocol */,
 			);
@@ -570,6 +581,7 @@
 				A0221B0D2CBA285D00FCFE9F /* RecentKeywordRepository.swift in Sources */,
 				C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */,
 				C0C34E352CB7E88A00299564 /* BaseNavigationViewController.swift in Sources */,
+				A0221B102CBA792900FCFE9F /* FileStorage.swift in Sources */,
 				C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */,
 				C0C34E392CB7E9CC00299564 /* BaseCollectionViewCell.swift in Sources */,
 				C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */,
