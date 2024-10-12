@@ -10,6 +10,7 @@
 		A0221B072CB92E5B00FCFE9F /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B062CB92E5B00FCFE9F /* FavoriteMovie.swift */; };
 		A0221B092CB9330200FCFE9F /* RecentKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B082CB9330200FCFE9F /* RecentKeyword.swift */; };
 		A0221B0B2CB935B200FCFE9F /* FavoriteMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0A2CB935B200FCFE9F /* FavoriteMovieRepository.swift */; };
+		A0221B0D2CBA285D00FCFE9F /* RecentKeywordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0C2CBA285D00FCFE9F /* RecentKeywordRepository.swift */; };
 		C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084CD932CB7F39500EC59C2 /* ImageButton.swift */; };
 		C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E292CB7B65100299564 /* UIFont+.swift */; };
 		C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */; };
@@ -56,6 +57,7 @@
 		A0221B062CB92E5B00FCFE9F /* FavoriteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovie.swift; sourceTree = "<group>"; };
 		A0221B082CB9330200FCFE9F /* RecentKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeyword.swift; sourceTree = "<group>"; };
 		A0221B0A2CB935B200FCFE9F /* FavoriteMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieRepository.swift; sourceTree = "<group>"; };
+		A0221B0C2CBA285D00FCFE9F /* RecentKeywordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordRepository.swift; sourceTree = "<group>"; };
 		C084CD932CB7F39500EC59C2 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		C0C34E292CB7B65100299564 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		C0C34E2C2CB7B6B300299564 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A0221B062CB92E5B00FCFE9F /* FavoriteMovie.swift */,
 				A0221B082CB9330200FCFE9F /* RecentKeyword.swift */,
 				A0221B0A2CB935B200FCFE9F /* FavoriteMovieRepository.swift */,
+				A0221B0C2CBA285D00FCFE9F /* RecentKeywordRepository.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				A0221B092CB9330200FCFE9F /* RecentKeyword.swift in Sources */,
 				C98CD6F12CB81EAB005361D5 /* TargetType.swift in Sources */,
 				C0C34E3B2CB7EC7C00299564 /* TabBarController.swift in Sources */,
+				A0221B0D2CBA285D00FCFE9F /* RecentKeywordRepository.swift in Sources */,
 				C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */,
 				C0C34E352CB7E88A00299564 /* BaseNavigationViewController.swift in Sources */,
 				C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */,

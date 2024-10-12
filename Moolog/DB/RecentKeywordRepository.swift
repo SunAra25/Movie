@@ -1,15 +1,15 @@
 //
-//  FavoriteMovieRepository.swift
+//  RecentKeywordRepository.swift
 //  Moolog
 //
-//  Created by 여성은 on 10/11/24.
+//  Created by 여성은 on 10/12/24.
 //
 
 import Foundation
 
 import RealmSwift
 
-final class FavoriteMovieRepository {
+final class RecentKeywordRepository {
     private let realm: Realm
     
     init() {
@@ -19,21 +19,16 @@ final class FavoriteMovieRepository {
             fatalError("Realm 초기화 실패")
         }
     }
-    
-    func getFileURL() {
-        guard let fileURL = realm.configuration.fileURL else { return }
-        print(fileURL)
-    }
-    
-    func fetchData() -> [FavoriteMovie] {
-        let value = realm.objects(FavoriteMovie.self).sorted(
-            byKeyPath: "createDate",
-            ascending: true
+
+    func fetchData() -> [RecentKeyword] {
+        let value = realm.objects(RecentKeyword.self).sorted(
+            byKeyPath: "searchTime",
+            ascending: false
         )
         return Array(value)
     }
     
-    func createItem(_ data: FavoriteMovie) {
+    func createItem(_ data: RecentKeyword) {
         do {
             try realm.write {
                 realm.add(data)
@@ -43,10 +38,10 @@ final class FavoriteMovieRepository {
         }
     }
     
-    func deleteItem(_ id: Int) {
+    func deleteItem(_ id: ObjectId) {
         do {
             try realm.write {
-                realm.delete(realm.objects(FavoriteMovie.self).filter("id=%@", id))
+                realm.delete(realm.objects(RecentKeyword.self).filter("id=%@", id))
             }
         } catch {
             print("Realm Delet Error")
