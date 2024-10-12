@@ -136,7 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
 		A0221B052CB917B800FCFE9F /* DB */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +153,8 @@
 				A0221B0F2CBA792900FCFE9F /* FileStorage.swift */,
 			);
 			path = FileStorage;
-
+            sourceTree = "<group>";
+        };
 		C0925C132CB94A2E007EF2D5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,32 +616,24 @@
 				C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */,
 				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
 				A0221B072CB92E5B00FCFE9F /* FavoriteMovie.swift in Sources */,
-
 				C0925C122CB93953007EF2D5 /* NetworkManager.swift in Sources */,
 				C0925C1B2CB957C9007EF2D5 /* CreditsResponse.swift in Sources */,
 				C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */,
 				C9DC487D2CB7517A0073F3C3 /* ViewModelType.swift in Sources */,
 				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
 				C0925C152CB954EF007EF2D5 /* TrendingMovieResponse.swift in Sources */,
-
 				C98CD6F32CB81FC4005361D5 /* HTTPMethod.swift in Sources */,
 				A0221B092CB9330200FCFE9F /* RecentKeyword.swift in Sources */,
 				C98CD6F12CB81EAB005361D5 /* TargetType.swift in Sources */,
 				C0C34E3B2CB7EC7C00299564 /* TabBarController.swift in Sources */,
-
 				A0221B0D2CBA285D00FCFE9F /* RecentKeywordRepository.swift in Sources */,
-
 				C0925C1D2CB95866007EF2D5 /* SimilarMovieResponse.swift in Sources */,
-
 				C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */,
 				C0925C062CB90688007EF2D5 /* URLConstants.swift in Sources */,
 				C0C34E352CB7E88A00299564 /* BaseNavigationViewController.swift in Sources */,
-
 				A0221B102CBA792900FCFE9F /* FileStorage.swift in Sources */,
-
 				C0925C172CB95645007EF2D5 /* TrendingTVResponse.swift in Sources */,
 				C0925C1F2CB95987007EF2D5 /* MovieDetailResponse.swift in Sources */,
-
 				C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */,
 				C0925C102CB93825007EF2D5 /* Router.swift in Sources */,
 				C0925C192CB956E5007EF2D5 /* SearchResponse.swift in Sources */,
