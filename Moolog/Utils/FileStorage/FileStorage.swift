@@ -43,12 +43,12 @@ class FileStorage {
         }
     }
     
-    static func loadImageToDocument( filename: String) -> UIImage? {
+    static func loadImageToDocument(filename: String) -> UIImage? {
         
         guard let documentDirectory = FileManager.default
             .urls(
-            for: .documentDirectory,
-            in: .userDomainMask
+                for: .documentDirectory,
+                in: .userDomainMask
             ).first else {
             return nil
         }
@@ -73,8 +73,8 @@ class FileStorage {
     static func removeImageFromDocument(filename: String) {
         guard let documentDirectory = FileManager.default
             .urls(
-            for: .documentDirectory,
-            in: .userDomainMask
+                for: .documentDirectory,
+                in: .userDomainMask
             ).first else {
             return
         }
