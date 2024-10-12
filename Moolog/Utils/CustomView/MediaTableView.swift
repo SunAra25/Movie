@@ -11,7 +11,7 @@ import RxSwift
 import SnapKit
 
 final class MediaTableView: BaseView {
-    lazy var tableView: UITableView = {
+    var tableView: UITableView = {
         let view = UITableView()
         view.register(
             MediaTableViewCell.self,
