@@ -11,7 +11,10 @@ import Kingfisher
 
 class FileStorage {
     @MainActor
-    static func saveImageToDocument(image: String, filename: String) {
+    static func saveImageToDocument(
+        image: String,
+        filename: String
+    ) {
         var imageView = UIImageView()
         if let imageURL = URL(string: image) {
             imageView.kf.setImage(with: imageURL)
@@ -20,12 +23,15 @@ class FileStorage {
         guard let documentDirectory = FileManager.default
             .urls(
                 for: .documentDirectory,
-                in: .userDomainMask).first else { return }
+                in: .userDomainMask
+            ).first else {
+            return
+        }
         print("documentDirectory:", documentDirectory)
         
         let fileURL = documentDirectory.appendingPathComponent("\(filename).jpg")
         print("fileURL:", fileURL)
-       
+        
         guard let data = imageView.image?.jpegData(compressionQuality: 0.5) else {
             return
         }
@@ -37,11 +43,15 @@ class FileStorage {
         }
     }
     
-    static func loadImageToDocument(filename: String) -> UIImage? {
+    static func loadImageToDocument( filename: String) -> UIImage? {
         
-        guard let documentDirectory = FileManager.default.urls(
+        guard let documentDirectory = FileManager.default
+            .urls(
             for: .documentDirectory,
-            in: .userDomainMask).first else { return nil }
+            in: .userDomainMask
+            ).first else {
+            return nil
+        }
         
         let fileURL = documentDirectory.appendingPathComponent("\(filename).jpg")
         
@@ -61,9 +71,13 @@ class FileStorage {
     }
     
     static func removeImageFromDocument(filename: String) {
-        guard let documentDirectory = FileManager.default.urls(
+        guard let documentDirectory = FileManager.default
+            .urls(
             for: .documentDirectory,
-            in: .userDomainMask).first else { return }
+            in: .userDomainMask
+            ).first else {
+            return
+        }
         
         let fileURL = documentDirectory.appendingPathComponent("\(filename).jpg")
         
