@@ -26,10 +26,11 @@ final class FavoriteMovieRepository {
     }
     
     func fetchData() -> [FavoriteMovie] {
-        let value = realm.objects(FavoriteMovie.self).sorted(
-            byKeyPath: "createDate",
-            ascending: true
-        )
+        let value = realm.objects(FavoriteMovie.self)
+            .sorted(
+                byKeyPath: "createDate",
+                ascending: true
+            )
         return Array(value)
     }
     
@@ -46,7 +47,8 @@ final class FavoriteMovieRepository {
     func deleteItem(_ id: Int) {
         do {
             try realm.write {
-                realm.delete(realm.objects(FavoriteMovie.self).filter("id=%@", id))
+                realm.delete(realm.objects(FavoriteMovie.self)
+                    .filter("id=%@", id))
             }
         } catch {
             print("Realm Delet Error")

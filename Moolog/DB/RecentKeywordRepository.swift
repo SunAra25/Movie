@@ -19,12 +19,13 @@ final class RecentKeywordRepository {
             fatalError("Realm 초기화 실패")
         }
     }
-
+    
     func fetchData() -> [RecentKeyword] {
-        let value = realm.objects(RecentKeyword.self).sorted(
-            byKeyPath: "searchTime",
-            ascending: false
-        )
+        let value = realm.objects(RecentKeyword.self)
+            .sorted(
+                byKeyPath: "searchTime",
+                ascending: false
+            )
         return Array(value)
     }
     
@@ -41,7 +42,8 @@ final class RecentKeywordRepository {
     func deleteItem(_ id: ObjectId) {
         do {
             try realm.write {
-                realm.delete(realm.objects(RecentKeyword.self).filter("id=%@", id))
+                realm.delete(realm.objects(RecentKeyword.self)
+                    .filter("id=%@", id))
             }
         } catch {
             print("Realm Delet Error")
