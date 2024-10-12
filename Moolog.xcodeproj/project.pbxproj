@@ -32,6 +32,10 @@
 		C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E362CB7E94B00299564 /* BaseTableViewCell.swift */; };
 		C0C34E392CB7E9CC00299564 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E382CB7E9CC00299564 /* BaseCollectionViewCell.swift */; };
 		C0C34E3B2CB7EC7C00299564 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C34E3A2CB7EC7C00299564 /* TabBarController.swift */; };
+		C91BDAC92CB8FFF0001E0595 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDAC82CB8FFF0001E0595 /* MediaTableViewCell.swift */; };
+		C91BDACD2CB90AC8001E0595 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDACC2CB90AC8001E0595 /* BaseView.swift */; };
+		C91BDACF2CB90BCA001E0595 /* MediaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDACE2CB90BCA001E0595 /* MediaTableView.swift */; };
+		C91BDAF32CBAAE1F001E0595 /* MediaTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDAF22CBAAE1F001E0595 /* MediaTableHeaderCell.swift */; };
 		C98CD6F12CB81EAB005361D5 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CD6F02CB81EAB005361D5 /* TargetType.swift */; };
 		C98CD6F32CB81FC4005361D5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CD6F22CB81FC4005361D5 /* HTTPMethod.swift */; };
 		C9A2E9D42CB6B20200F99900 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D32CB6B20200F99900 /* RxCocoa */; };
@@ -91,6 +95,10 @@
 		C0C34E362CB7E94B00299564 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		C0C34E382CB7E9CC00299564 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0C34E3A2CB7EC7C00299564 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C91BDAC82CB8FFF0001E0595 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		C91BDACC2CB90AC8001E0595 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		C91BDACE2CB90BCA001E0595 /* MediaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableView.swift; sourceTree = "<group>"; };
+		C91BDAF22CBAAE1F001E0595 /* MediaTableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableHeaderCell.swift; sourceTree = "<group>"; };
 		C98CD6F02CB81EAB005361D5 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		C98CD6F22CB81FC4005361D5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -296,6 +304,7 @@
 				C0C34E382CB7E9CC00299564 /* BaseCollectionViewCell.swift */,
 				C0C34E342CB7E88A00299564 /* BaseNavigationViewController.swift */,
 				C0C34E362CB7E94B00299564 /* BaseTableViewCell.swift */,
+				C91BDACC2CB90AC8001E0595 /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -472,6 +481,9 @@
 			isa = PBXGroup;
 			children = (
 				C084CD932CB7F39500EC59C2 /* ImageButton.swift */,
+				C91BDAC82CB8FFF0001E0595 /* MediaTableViewCell.swift */,
+				C91BDACE2CB90BCA001E0595 /* MediaTableView.swift */,
+				C91BDAF22CBAAE1F001E0595 /* MediaTableHeaderCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -635,14 +647,18 @@
 				C0925C172CB95645007EF2D5 /* TrendingTVResponse.swift in Sources */,
 				C0925C1F2CB95987007EF2D5 /* MovieDetailResponse.swift in Sources */,
 				C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */,
+				C91BDAF32CBAAE1F001E0595 /* MediaTableHeaderCell.swift in Sources */,
 				C0925C102CB93825007EF2D5 /* Router.swift in Sources */,
 				C0925C192CB956E5007EF2D5 /* SearchResponse.swift in Sources */,
 				C0C34E392CB7E9CC00299564 /* BaseCollectionViewCell.swift in Sources */,
 				C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */,
 				C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */,
 				C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */,
+				C91BDACF2CB90BCA001E0595 /* MediaTableView.swift in Sources */,
+				C91BDAC92CB8FFF0001E0595 /* MediaTableViewCell.swift in Sources */,
 				C0C34E332CB7E63E00299564 /* BaseViewController.swift in Sources */,
 				C0C34E312CB7BDF800299564 /* Constant.swift in Sources */,
+				C91BDACD2CB90AC8001E0595 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
