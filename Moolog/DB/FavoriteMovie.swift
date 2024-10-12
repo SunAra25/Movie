@@ -9,10 +9,16 @@ import Foundation
 
 import RealmSwift
 
+enum MediaType: String, PersistableEnum {
+    case movie
+    case tv
+}
+
 class FavoriteMovie: Object{
     @Persisted(primaryKey: true) var id: Int
     @Persisted var title: String
     @Persisted var createDate: Date
+    @Persisted var mediaType: MediaType
     
     convenience init(id:Int, title: String) {
         self.init()
