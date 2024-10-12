@@ -8,12 +8,9 @@
 import UIKit
 
 import Kingfisher
-import RxSwift
 import SnapKit
 
 final class MediaTableViewCell: BaseTableViewCell {
-    var disposeBag = DisposeBag()
-    
     private lazy var posterView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
@@ -21,7 +18,7 @@ final class MediaTableViewCell: BaseTableViewCell {
     }()
     private lazy var mediaTitleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         label.font = .body1
         label.textColor = .white
         label.textAlignment = .left
@@ -53,7 +50,9 @@ final class MediaTableViewCell: BaseTableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        disposeBag = DisposeBag()
+        
+        posterView.image = nil
+        mediaTitleLabel.text = nil
     }
     
     func configureUI(posterImg: String, mediaTitle: String) {

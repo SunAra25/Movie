@@ -21,12 +21,20 @@ final class MediaTableHeaderCell: BaseTableViewCell {
         contentView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(12)
-            make.verticalEdges.equalToSuperview().inset(8)
+            make.horizontalEdges.equalToSuperview()
+                .inset(Constant.Numeric.horiSpacing.value)
+            make.verticalEdges.equalToSuperview()
+                .inset(Constant.Numeric.vertiSpacing.value)
         }
     }
     
     func setUI(title: String) {
         titleLabel.text = title
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        titleLabel.text = nil
     }
 }
