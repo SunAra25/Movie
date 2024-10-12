@@ -1,0 +1,35 @@
+//
+//  MediaTableView.swift
+//  Moolog
+//
+//  Created by Jisoo Ham on 10/11/24.
+//
+
+import UIKit
+
+import RxSwift
+import SnapKit
+
+final class MediaTableView: BaseView {
+    lazy var tableView: UITableView = {
+        let view = UITableView()
+        view.register(
+            MediaTableViewCell.self,
+            forCellReuseIdentifier: MediaTableViewCell.identifier
+        )
+        view.register(
+            MediaHeaderView.self,
+            forHeaderFooterViewReuseIdentifier: MediaHeaderView.identifier
+        )
+        view.rowHeight = 110
+        return view
+    }()
+    
+    override func setLayout() {
+        addSubview(tableView)
+        
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+}
