@@ -35,7 +35,7 @@ final class SearchViewController: BaseNavigationViewController {
         )
         return view
     }()
-    
+    private lazy var trendingTableView = MediaTableView()
     private let viewModel = SearchViewModel(networkManager: NetworkManager())
     
     override func setNavigation() {
@@ -54,7 +54,9 @@ final class SearchViewController: BaseNavigationViewController {
         
         let input = SearchViewModel.Input(
             viewWillAppear: rx.viewWillAppear,
-            searchedText: searchedText
+            searchedText: searchedText,
+            seachCancelled: searchController.searchBar.rx.cancelButtonClicked
+                .map { _ in () }
         )
         let output = viewModel.transform(input: input)
         
@@ -80,17 +82,66 @@ final class SearchViewController: BaseNavigationViewController {
             return header
         }
         
+        let tableDataSource = RxTableViewSectionedReloadDataSource
+        <SearchTrendingSectionModel> { _, tableView, indexPath, item in
+            tableView.rowHeight = indexPath.row == 0 ? 60 : 110
+            
+            switch item {
+            case .header(let title):
+                guard let headerCell = tableView.dequeueReusableCell(
+                    withIdentifier: MediaTableHeaderCell.identifier,
+                    for: indexPath
+                ) as? MediaTableHeaderCell else { return UITableViewCell() }
+                
+                headerCell.setUI(title: title)
+                
+                return headerCell
+            case .movies(let data):
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: MediaTableViewCell.identifier,
+                    for: indexPath
+                ) as? MediaTableViewCell else { return UITableViewCell() }
+                
+                cell.configureUI(
+                    posterImg: data.posterPath,
+                    mediaTitle: data.title,
+                    isSearch: true
+                )
+                
+                return cell
+            }
+        }
+
+        output.trendMovie
+            .drive(trendingTableView.tableView.rx.items(dataSource: tableDataSource))
+            .disposed(by: disposeBag)
+        
         output.searchedDataSources
             .drive(collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        output.isSearched
+            .drive(with: self) { owner, isSearched in
+                if isSearched {
+                    owner.trendingTableView.isHidden = true
+                    owner.collectionView.isHidden = false
+                } else {
+                    owner.trendingTableView.isHidden = false
+                    owner.collectionView.isHidden = true
+                }
+            }
             .disposed(by: disposeBag)
     }
     
     override func setHierarchy() {
-        [collectionView]
+        [trendingTableView, collectionView]
             .forEach { view.addSubview($0) }
     }
     
     override func setConstraints() {
+        trendingTableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
