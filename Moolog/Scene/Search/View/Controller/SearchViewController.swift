@@ -73,7 +73,8 @@ final class SearchViewController: BaseNavigationViewController {
                 .map { _ in () },
             cvSelectedCell: collectionView.rx.itemSelected
                 .map { cvDataSource[0].items[$0.item].id },
-            tvSelectedCell: tvSelected
+            tvSelectedCell: tvSelected,
+            prefetchItems: collectionView.rx.prefetchItems.asObservable()
         )
         let output = viewModel.transform(input: input)
 
@@ -100,15 +101,20 @@ final class SearchViewController: BaseNavigationViewController {
         output.selectedMediaID
             .drive(with: self) { _, mediaID in
                 print(mediaID)
-//                let vc =
-//                owner.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
+//                let vc = owner.navigationController?.pushViewController(
+//                    <#T##viewController: UIViewController##UIViewController#>,
+//                    animated: true
+//                )
             }
             .disposed(by: disposeBag)
         
     }
     
     override func setHierarchy() {
-        [trendingTableView, collectionView]
+        [
+            trendingTableView,
+            collectionView
+        ]
             .forEach { view.addSubview($0) }
     }
     

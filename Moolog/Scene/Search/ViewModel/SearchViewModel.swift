@@ -14,6 +14,10 @@ final class SearchViewModel: ViewModelType {
     var disposeBag: DisposeBag = DisposeBag()
     let networkManager: NetworkType
     
+    private var totalPages: Int = 1
+    private var currentPage: Int = 1
+    private var latestSearchText: String = ""
+    
     init(networkManager: NetworkType) {
         self.networkManager = networkManager
     }
@@ -24,6 +28,7 @@ final class SearchViewModel: ViewModelType {
         let seachCancelled: Observable<Void>
         let cvSelectedCell: Observable<Int>
         let tvSelectedCell: Observable<Int>
+        let prefetchItems: Observable<[IndexPath]>
     }
     
     struct Output {
@@ -68,27 +73,15 @@ final class SearchViewModel: ViewModelType {
         input.searchedText
             .distinctUntilChanged()
             .bind(with: self) { owner, text in
-                owner.networkManager.callRequest(
-                    router: .searchMovie(target: text, page: 1),
-                    type: SearchResponse.self
+                owner.resetPages(text: text)
+                searchedDataSource.accept([])
+                
+                owner.fetchSearchResults(
+                    query: owner.latestSearchText,
+                    page: owner.currentPage,
+                    dataSource: searchedDataSource,
+                    isSearched: isSearched
                 )
-                .subscribe { result in
-                    switch result {
-                    case .success(let response):
-                        let searched = response.results.filter { $0.posterPath != nil }
-                        
-                        searchedDataSource.accept([SearchMovieSectionModel(
-                            header: "영화 & 시리즈",
-                            items: searched
-                        )])
-                        
-                        isSearched.accept(true)
-                    case .failure(let err):
-                        print(err)
-                        isSearched.accept(true)
-                    }
-                }
-                .disposed(by: owner.disposeBag)
             }
             .disposed(by: disposeBag)
         
@@ -106,11 +99,74 @@ final class SearchViewModel: ViewModelType {
             .bind(to: selectedMediaID)
             .disposed(by: disposeBag)
         
+        input.prefetchItems
+            .withUnretained(self)
+            .filter { owner, indexPathArray in
+                if let indexPath = indexPathArray.first,
+                   let searchedList = searchedDataSource.value.first {
+                    return indexPath.row > searchedList.items.count - 5 
+                    && owner.currentPage < owner.totalPages
+                } else {
+                    return false
+                }
+            }
+            .bind { viewModel, _ in
+                viewModel.currentPage += 1
+                
+                viewModel.fetchSearchResults(
+                    query: viewModel.latestSearchText,
+                    page: viewModel.currentPage,
+                    dataSource: searchedDataSource,
+                    isSearched: isSearched
+                )
+            }
+            .disposed(by: disposeBag)
+        
         return Output(
             trendMovie: trendMovie.asDriver(onErrorJustReturn: []),
             searchedDataSources: searchedDataSource.asDriver(onErrorJustReturn: []),
             isSearched: isSearched.asDriver(onErrorJustReturn: false),
             selectedMediaID: selectedMediaID.asDriver(onErrorJustReturn: 0)
         )
+    }
+    private func fetchSearchResults(
+        query: String,
+        page: Int,
+        dataSource: BehaviorRelay<[SearchMovieSectionModel]>,
+        isSearched: PublishRelay<Bool>
+    ) {
+        networkManager.callRequest(
+            router: .searchMovie(target: query, page: page),
+            type: SearchResponse.self
+        )
+        .subscribe(with: self) { owner, result in
+            switch result {
+            case .success(let response):
+                let searched = response.results.filter { $0.posterPath != nil }
+                
+                if page == 1 {
+                    dataSource.accept([SearchMovieSectionModel(
+                        header: "영화 & 시리즈",
+                        items: searched)
+                    ])
+                } else {
+                    var currentSections = dataSource.value
+                    currentSections[0].items.append(contentsOf: searched)
+                    dataSource.accept(currentSections)
+                }
+                
+                owner.totalPages = response.totalPages
+                isSearched.accept(true)
+            case .failure(let err):
+                print(err)
+                isSearched.accept(true)
+            }
+        }
+        .disposed(by: disposeBag)
+    }
+    private func resetPages(text: String) {
+        totalPages = 1
+        currentPage = 1
+        latestSearchText = text
     }
 }
