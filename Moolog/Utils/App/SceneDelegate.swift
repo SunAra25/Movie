@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         
-        window?.rootViewController = TrendViewController()
+        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
     }
 
