@@ -41,6 +41,12 @@
 		C91BDAF92CBB7434001E0595 /* Reactive+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDAF82CBB7434001E0595 /* Reactive+.swift */; };
 		C91BDAFB2CBB75F1001E0595 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C91BDAFA2CBB75F1001E0595 /* Secrets.xcconfig */; };
 		C91BDAFC2CBB81A4001E0595 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */; };
+		C91BDB002CBBA39A001E0595 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDAFF2CBBA39A001E0595 /* SearchViewController.swift */; };
+		C91BDB022CBBA76F001E0595 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDB012CBBA76F001E0595 /* SearchCollectionViewCell.swift */; };
+		C91BDB042CBBAE76001E0595 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDB032CBBAE76001E0595 /* SearchViewModel.swift */; };
+		C91BDB062CBBBBF6001E0595 /* SearchCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDB052CBBBBF6001E0595 /* SearchCollectionHeaderView.swift */; };
+		C91BDB082CBBBE37001E0595 /* SearchMovieSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDB072CBBBE37001E0595 /* SearchMovieSectionModel.swift */; };
+		C91BDB0C2CBBDAFE001E0595 /* SearchTrendingSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91BDB0B2CBBDAFE001E0595 /* SearchTrendingSectionModel.swift */; };
 		C98CD6F12CB81EAB005361D5 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CD6F02CB81EAB005361D5 /* TargetType.swift */; };
 		C98CD6F32CB81FC4005361D5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CD6F22CB81FC4005361D5 /* HTTPMethod.swift */; };
 		C9A2E9D42CB6B20200F99900 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9D32CB6B20200F99900 /* RxCocoa */; };
@@ -52,13 +58,9 @@
 		C9A2E9E42CB6B3C200F99900 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2E9E32CB6B3C200F99900 /* SnapKit */; };
 		C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */; };
 		C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */; };
-		C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */ = {isa = PBXBuildFile; fileRef = C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */; };
 		C9A2EA0A2CB6C49700F99900 /* MediaViewModel in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA092CB6C49700F99900 /* MediaViewModel */; };
 		C9A2EA0D2CB6C4A900F99900 /* MediaController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA0C2CB6C4A900F99900 /* MediaController */; };
 		C9A2EA102CB6C4B300F99900 /* MediaCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA0F2CB6C4B300F99900 /* MediaCell */; };
-		C9A2EA152CB6C4E800F99900 /* SearchViewModel in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA142CB6C4E800F99900 /* SearchViewModel */; };
-		C9A2EA192CB6C4FC00F99900 /* SearchCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA182CB6C4FC00F99900 /* SearchCell */; };
-		C9A2EA1C2CB6C50A00F99900 /* SearchController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA1B2CB6C50A00F99900 /* SearchController */; };
 		C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA262CB6C58F00F99900 /* FavoriteCell */; };
 		C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */; };
 		C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */; };
@@ -102,17 +104,19 @@
 		C91BDAF62CBB728C001E0595 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		C91BDAF82CBB7434001E0595 /* Reactive+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+.swift"; sourceTree = "<group>"; };
 		C91BDAFA2CBB75F1001E0595 /* Secrets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		C91BDAFF2CBBA39A001E0595 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C91BDB012CBBA76F001E0595 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		C91BDB032CBBAE76001E0595 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		C91BDB052CBBBBF6001E0595 /* SearchCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionHeaderView.swift; sourceTree = "<group>"; };
+		C91BDB072CBBBE37001E0595 /* SearchMovieSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieSectionModel.swift; sourceTree = "<group>"; };
+		C91BDB0B2CBBDAFE001E0595 /* SearchTrendingSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTrendingSectionModel.swift; sourceTree = "<group>"; };
 		C98CD6F02CB81EAB005361D5 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		C98CD6F22CB81FC4005361D5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		C9A2E9E82CB6BE6500F99900 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9A2E9F32CB6C2DC00F99900 /* EnumEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = EnumEmptyFile; sourceTree = "<group>"; };
-		C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = ModelEmptyFile; sourceTree = "<group>"; };
 		C9A2EA092CB6C49700F99900 /* MediaViewModel */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaViewModel; sourceTree = "<group>"; };
 		C9A2EA0C2CB6C4A900F99900 /* MediaController */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaController; sourceTree = "<group>"; };
 		C9A2EA0F2CB6C4B300F99900 /* MediaCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = MediaCell; sourceTree = "<group>"; };
-		C9A2EA142CB6C4E800F99900 /* SearchViewModel */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchViewModel; sourceTree = "<group>"; };
-		C9A2EA182CB6C4FC00F99900 /* SearchCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCell; sourceTree = "<group>"; };
-		C9A2EA1B2CB6C50A00F99900 /* SearchController */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchController; sourceTree = "<group>"; };
 		C9A2EA262CB6C58F00F99900 /* FavoriteCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = FavoriteCell; sourceTree = "<group>"; };
 		C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9FBC3522CB6574A00EBAE11 /* Moolog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moolog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,7 +287,8 @@
 		C9A2E9FB2CB6C35F00F99900 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2E9FC2CB6C36D00F99900 /* ModelEmptyFile */,
+				C91BDB072CBBBE37001E0595 /* SearchMovieSectionModel.swift */,
+				C91BDB0B2CBBDAFE001E0595 /* SearchTrendingSectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,7 +367,7 @@
 		C9A2EA132CB6C4DC00F99900 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA142CB6C4E800F99900 /* SearchViewModel */,
+				C91BDB032CBBAE76001E0595 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -379,7 +384,8 @@
 		C9A2EA172CB6C4F300F99900 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA182CB6C4FC00F99900 /* SearchCell */,
+				C91BDB012CBBA76F001E0595 /* SearchCollectionViewCell.swift */,
+				C91BDB052CBBBBF6001E0595 /* SearchCollectionHeaderView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -387,7 +393,7 @@
 		C9A2EA1A2CB6C50300F99900 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA1B2CB6C50A00F99900 /* SearchController */,
+				C91BDAFF2CBBA39A001E0595 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -593,16 +599,14 @@
 				C0C34E2F2CB7B6B400299564 /* Pretendard-Bold.otf in Resources */,
 				C9A2EA0A2CB6C49700F99900 /* MediaViewModel in Resources */,
 				C9A2EA0D2CB6C4A900F99900 /* MediaController in Resources */,
-				C9A2EA1C2CB6C50A00F99900 /* SearchController in Resources */,
-				C9A2EA152CB6C4E800F99900 /* SearchViewModel in Resources */,
 				C9A2E9E92CB6BE6500F99900 /* .swiftlint.yml in Resources */,
 				C9FBC35F2CB6574A00EBAE11 /* Assets.xcassets in Resources */,
 				C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */,
 				C9A2EA192CB6C4FC00F99900 /* SearchCell in Resources */,
+				C9A2EA2B2CB6C5CD00F99900 /* TrendVM in Resources */,
 				C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */,
 				C9FBC3622CB6574A00EBAE11 /* Base in Resources */,
 				C91BDAFB2CBB75F1001E0595 /* Secrets.xcconfig in Resources */,
-				C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */,
 				C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */,
 				C9A2EA102CB6C4B300F99900 /* MediaCell in Resources */,
 			);
@@ -619,7 +623,9 @@
 				A0221B0B2CB935B200FCFE9F /* FavoriteMovieRepository.swift in Sources */,
 				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
 				A0221B072CB92E5B00FCFE9F /* FavoriteMovie.swift in Sources */,
+				C91BDB002CBBA39A001E0595 /* SearchViewController.swift in Sources */,
 				C0925C122CB93953007EF2D5 /* NetworkManager.swift in Sources */,
+				C91BDB062CBBBBF6001E0595 /* SearchCollectionHeaderView.swift in Sources */,
 				C0925C1B2CB957C9007EF2D5 /* CreditsResponse.swift in Sources */,
 				C91BDAF92CBB7434001E0595 /* Reactive+.swift in Sources */,
 				C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */,
@@ -627,6 +633,7 @@
 				C0925C152CB954EF007EF2D5 /* TrendingMovieResponse.swift in Sources */,
 				C98CD6F32CB81FC4005361D5 /* HTTPMethod.swift in Sources */,
 				A0221B092CB9330200FCFE9F /* RecentKeyword.swift in Sources */,
+				C91BDB082CBBBE37001E0595 /* SearchMovieSectionModel.swift in Sources */,
 				C98CD6F12CB81EAB005361D5 /* TargetType.swift in Sources */,
 				C0C34E3B2CB7EC7C00299564 /* TabBarController.swift in Sources */,
 				A0221B0D2CBA285D00FCFE9F /* RecentKeywordRepository.swift in Sources */,
@@ -634,12 +641,14 @@
 				C0C34E2A2CB7B65100299564 /* UIFont+.swift in Sources */,
 				C0925C062CB90688007EF2D5 /* URLConstants.swift in Sources */,
 				C0C34E352CB7E88A00299564 /* BaseNavigationViewController.swift in Sources */,
+				C91BDB0C2CBBDAFE001E0595 /* SearchTrendingSectionModel.swift in Sources */,
 				A0221B102CBA792900FCFE9F /* FileStorage.swift in Sources */,
 				C0925C172CB95645007EF2D5 /* TrendingTVResponse.swift in Sources */,
 				C0925C1F2CB95987007EF2D5 /* MovieDetailResponse.swift in Sources */,
 				C91BDAF72CBB728C001E0595 /* FavoriteViewModel.swift in Sources */,
 				C91BDAF52CBAC29B001E0595 /* FavoriteViewController.swift in Sources */,
 				C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */,
+				C91BDB042CBBAE76001E0595 /* SearchViewModel.swift in Sources */,
 				C91BDAF32CBAAE1F001E0595 /* MediaTableHeaderCell.swift in Sources */,
 				C0925C102CB93825007EF2D5 /* Router.swift in Sources */,
 				C0925C192CB956E5007EF2D5 /* SearchResponse.swift in Sources */,
@@ -649,6 +658,7 @@
 				C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */,
 				C91BDACF2CB90BCA001E0595 /* MediaTableView.swift in Sources */,
 				C91BDAC92CB8FFF0001E0595 /* MediaTableViewCell.swift in Sources */,
+				C91BDB022CBBA76F001E0595 /* SearchCollectionViewCell.swift in Sources */,
 				C0C34E332CB7E63E00299564 /* BaseViewController.swift in Sources */,
 				C0C34E312CB7BDF800299564 /* Constant.swift in Sources */,
 				C91BDACD2CB90AC8001E0595 /* BaseView.swift in Sources */,

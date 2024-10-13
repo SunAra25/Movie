@@ -14,6 +14,7 @@ final class MediaTableViewCell: BaseTableViewCell {
     private var posterView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
         return view
     }()
     private var mediaTitleLabel: UILabel = {
@@ -43,9 +44,11 @@ final class MediaTableViewCell: BaseTableViewCell {
         mediaTitleLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalTo(posterView.snp.trailing)
-                .inset(Constant.Numeric.vertiSpacing.value) // img를 기준으로 12만큼
+                .inset(-Constant.Numeric.vertiSpacing.value) // img를 기준으로 12만큼
             make.trailing.equalToSuperview().inset(Constant.Numeric.vertiSpacing.value)
         }
+        
+        selectionStyle = .none
     }
     
     override func prepareForReuse() {
@@ -55,8 +58,12 @@ final class MediaTableViewCell: BaseTableViewCell {
         mediaTitleLabel.text = nil
     }
     
-    func configureUI(posterImg: String, mediaTitle: String) {
-        posterView.image = FileStorage.loadImageToDocument(filename: posterImg)
+    func configureUI(posterImg: String, mediaTitle: String, isSearch: Bool) {
+        if isSearch {
+            posterView.kf.setImage(with: URL(string: URLConstant.imageURL + posterImg))
+        } else {
+            posterView.image = FileStorage.loadImageToDocument(filename: posterImg)
+        }
         mediaTitleLabel.text = mediaTitle
     }
 }
