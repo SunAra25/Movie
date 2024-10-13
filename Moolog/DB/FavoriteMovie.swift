@@ -14,7 +14,7 @@ enum MediaType: String, PersistableEnum {
     case series
 }
 
-class FavoriteMovie: Object{
+class FavoriteMovie: Object {
     @Persisted(primaryKey: true) var id: Int
     @Persisted var title: String
     @Persisted var createDate: Date

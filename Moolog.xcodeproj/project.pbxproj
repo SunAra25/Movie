@@ -12,6 +12,9 @@
 		A0221B0B2CB935B200FCFE9F /* FavoriteMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0A2CB935B200FCFE9F /* FavoriteMovieRepository.swift */; };
 		A0221B0D2CBA285D00FCFE9F /* RecentKeywordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0C2CBA285D00FCFE9F /* RecentKeywordRepository.swift */; };
 		A0221B102CBA792900FCFE9F /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0221B0F2CBA792900FCFE9F /* FileStorage.swift */; };
+		A0D4EBD52CBBF7E900E82792 /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D4EBD42CBBF7E900E82792 /* TrendViewModel.swift */; };
+		A0D4EBD72CBBF7FB00E82792 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D4EBD62CBBF7FB00E82792 /* TrendViewController.swift */; };
+		A0D4EBD92CBBF85D00E82792 /* TrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D4EBD82CBBF85D00E82792 /* TrendCollectionViewCell.swift */; };
 		C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084CD932CB7F39500EC59C2 /* ImageButton.swift */; };
 		C0925C062CB90688007EF2D5 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C052CB90688007EF2D5 /* URLConstants.swift */; };
 		C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0925C0D2CB93737007EF2D5 /* Header.swift */; };
@@ -75,6 +78,9 @@
 		A0221B0A2CB935B200FCFE9F /* FavoriteMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieRepository.swift; sourceTree = "<group>"; };
 		A0221B0C2CBA285D00FCFE9F /* RecentKeywordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentKeywordRepository.swift; sourceTree = "<group>"; };
 		A0221B0F2CBA792900FCFE9F /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		A0D4EBD42CBBF7E900E82792 /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
+		A0D4EBD62CBBF7FB00E82792 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		A0D4EBD82CBBF85D00E82792 /* TrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewCell.swift; sourceTree = "<group>"; };
 		C084CD932CB7F39500EC59C2 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		C0925C042CB902A5007EF2D5 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		C0925C052CB90688007EF2D5 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
@@ -452,6 +458,7 @@
 		C9A2EA292CB6C5C200F99900 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A0D4EBD42CBBF7E900E82792 /* TrendViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -468,6 +475,7 @@
 		C9A2EA2D2CB6C5D700F99900 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A0D4EBD62CBBF7FB00E82792 /* TrendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -475,6 +483,7 @@
 		C9A2EA312CB6C5F300F99900 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A0D4EBD82CBBF85D00E82792 /* TrendCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -649,16 +658,19 @@
 				C91BDAF52CBAC29B001E0595 /* FavoriteViewController.swift in Sources */,
 				C0C34E372CB7E94B00299564 /* BaseTableViewCell.swift in Sources */,
 				C91BDB042CBBAE76001E0595 /* SearchViewModel.swift in Sources */,
+				A0D4EBD72CBBF7FB00E82792 /* TrendViewController.swift in Sources */,
 				C91BDAF32CBAAE1F001E0595 /* MediaTableHeaderCell.swift in Sources */,
 				C0925C102CB93825007EF2D5 /* Router.swift in Sources */,
 				C0925C192CB956E5007EF2D5 /* SearchResponse.swift in Sources */,
 				C0C34E392CB7E9CC00299564 /* BaseCollectionViewCell.swift in Sources */,
 				C084CD942CB7F39500EC59C2 /* ImageButton.swift in Sources */,
+				A0D4EBD52CBBF7E900E82792 /* TrendViewModel.swift in Sources */,
 				C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */,
 				C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */,
 				C91BDACF2CB90BCA001E0595 /* MediaTableView.swift in Sources */,
 				C91BDAC92CB8FFF0001E0595 /* MediaTableViewCell.swift in Sources */,
 				C91BDB022CBBA76F001E0595 /* SearchCollectionViewCell.swift in Sources */,
+				A0D4EBD92CBBF85D00E82792 /* TrendCollectionViewCell.swift in Sources */,
 				C0C34E332CB7E63E00299564 /* BaseViewController.swift in Sources */,
 				C0C34E312CB7BDF800299564 /* Constant.swift in Sources */,
 				C91BDACD2CB90AC8001E0595 /* BaseView.swift in Sources */,
