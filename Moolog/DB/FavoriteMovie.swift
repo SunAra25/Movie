@@ -11,7 +11,7 @@ import RealmSwift
 
 enum MediaType: String, PersistableEnum {
     case movie
-    case tv
+    case series
 }
 
 class FavoriteMovie: Object{
