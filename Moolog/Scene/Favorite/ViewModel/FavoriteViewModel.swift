@@ -19,6 +19,7 @@ final class FavoriteViewModel: ViewModelType {
         let selectedCell: Observable<Int>
         let deleteCell: Observable<Int>
     }
+    
     struct Output {
         let favMedia: Driver<[FavoriteMovie]>
         let selectedMediaID: Driver<Int>

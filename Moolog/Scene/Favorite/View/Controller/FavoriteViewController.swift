@@ -47,6 +47,7 @@ final class FavoriteViewController: BaseNavigationViewController {
     override func setHierarchy() {
         view.addSubview(favTableView)
     }
+    
     override func setConstraints() {
         favTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
