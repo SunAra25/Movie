@@ -52,7 +52,7 @@ final class MediaDetailViewController: BaseViewController {
         radius: 8
     )
     private let saveButton = ImageButton(
-        title: "재생",
+        title: "저장",
         image: UIImage(systemName: "square.and.arrow.down"),
         foreColor: .white,
         backColor: .baseBG,
