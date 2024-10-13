@@ -39,7 +39,8 @@ enum Constant {
     }
     
     enum SectionHeader: String {
-        case rising = "지금 뜨는 영화"
+        case risingMovie = "지금 뜨는 영화"
+        case risingSeries = "지금 뜨는 TV시리즈"
         case recommend = "추천 시리즈 & 영화"
         case similar = "비슷한 콘텐츠"
     }
