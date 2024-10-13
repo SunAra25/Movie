@@ -36,6 +36,14 @@ final class SearchViewController: BaseNavigationViewController {
         return view
     }()
     private lazy var trendingTableView = MediaTableView()
+    private var emptyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "검색 결과가 없습니다."
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .body1
+        return label
+    }()
     private let viewModel = SearchViewModel(networkManager: NetworkManager())
     
     override func setNavigation() {
@@ -108,12 +116,19 @@ final class SearchViewController: BaseNavigationViewController {
             }
             .disposed(by: disposeBag)
         
+        output.isEmptyResult
+            .drive(with: self) { owner, isEmpty in
+                print(isEmpty)
+                owner.emptyLabel.isHidden = !isEmpty
+            }
+            .disposed(by: disposeBag)
     }
     
     override func setHierarchy() {
         [
             trendingTableView,
-            collectionView
+            collectionView,
+            emptyLabel
         ]
             .forEach { view.addSubview($0) }
     }
@@ -125,6 +140,10 @@ final class SearchViewController: BaseNavigationViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
+        emptyLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        emptyLabel.isHidden = true
     }
     
     private func makeCollectionViewDataSource()

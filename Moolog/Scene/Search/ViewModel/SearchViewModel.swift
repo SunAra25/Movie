@@ -36,6 +36,7 @@ final class SearchViewModel: ViewModelType {
         let searchedDataSources: Driver<[SearchMovieSectionModel]>
         let isSearched: Driver<Bool>
         let selectedMediaID: Driver<Int>
+        let isEmptyResult: Driver<Bool>
     }
     
     func transform(input: Input) -> Output {
@@ -43,6 +44,7 @@ final class SearchViewModel: ViewModelType {
         let searchedDataSource = BehaviorRelay<[SearchMovieSectionModel]>(value: [])
         let isSearched = PublishRelay<Bool>()
         let selectedMediaID = PublishRelay<Int>()
+        let isEmptyResult = PublishRelay<Bool>()
         
         input.viewWillAppear
             .bind(with: self) { owner, _ in
@@ -80,7 +82,8 @@ final class SearchViewModel: ViewModelType {
                     query: owner.latestSearchText,
                     page: owner.currentPage,
                     dataSource: searchedDataSource,
-                    isSearched: isSearched
+                    isSearched: isSearched,
+                    isEmptyResult: isEmptyResult
                 )
             }
             .disposed(by: disposeBag)
@@ -117,7 +120,8 @@ final class SearchViewModel: ViewModelType {
                     query: viewModel.latestSearchText,
                     page: viewModel.currentPage,
                     dataSource: searchedDataSource,
-                    isSearched: isSearched
+                    isSearched: isSearched,
+                    isEmptyResult: isEmptyResult
                 )
             }
             .disposed(by: disposeBag)
@@ -126,14 +130,16 @@ final class SearchViewModel: ViewModelType {
             trendMovie: trendMovie.asDriver(onErrorJustReturn: []),
             searchedDataSources: searchedDataSource.asDriver(onErrorJustReturn: []),
             isSearched: isSearched.asDriver(onErrorJustReturn: false),
-            selectedMediaID: selectedMediaID.asDriver(onErrorJustReturn: 0)
+            selectedMediaID: selectedMediaID.asDriver(onErrorJustReturn: 0),
+            isEmptyResult: isEmptyResult.asDriver(onErrorJustReturn: false)
         )
     }
     private func fetchSearchResults(
         query: String,
         page: Int,
         dataSource: BehaviorRelay<[SearchMovieSectionModel]>,
-        isSearched: PublishRelay<Bool>
+        isSearched: PublishRelay<Bool>,
+        isEmptyResult: PublishRelay<Bool>
     ) {
         networkManager.callRequest(
             router: .searchMovie(target: query, page: page),
@@ -143,6 +149,8 @@ final class SearchViewModel: ViewModelType {
             switch result {
             case .success(let response):
                 let searched = response.results.filter { $0.posterPath != nil }
+                
+                owner.fetchSearchResult(searched: searched, isEmptyResult: isEmptyResult)
                 
                 if page == 1 {
                     dataSource.accept([SearchMovieSectionModel(
@@ -168,5 +176,13 @@ final class SearchViewModel: ViewModelType {
         totalPages = 1
         currentPage = 1
         latestSearchText = text
+    }
+    
+    private func fetchSearchResult(
+        searched: [SearchResult],
+        isEmptyResult: PublishRelay<Bool>
+    ) {
+        let isEmpty = searched.isEmpty
+        isEmptyResult.accept(isEmpty)
     }
 }
