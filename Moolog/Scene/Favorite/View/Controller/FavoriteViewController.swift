@@ -31,7 +31,8 @@ final class FavoriteViewController: BaseNavigationViewController {
             )) { _, data, cell in
                 cell.configureUI(
                     posterImg: String(data.id),
-                    mediaTitle: data.title
+                    mediaTitle: data.title,
+                    isSearch: false
                 )
             }
             .disposed(by: disposeBag)

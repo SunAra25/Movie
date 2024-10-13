@@ -27,6 +27,8 @@ final class MediaTableHeaderCell: BaseTableViewCell {
             make.verticalEdges.equalToSuperview()
                 .inset(Constant.Numeric.vertiSpacing.value)
         }
+        
+        selectionStyle = .none
     }
     
     func setUI(title: String) {
