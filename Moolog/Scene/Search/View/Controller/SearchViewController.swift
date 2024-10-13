@@ -213,7 +213,7 @@ extension SearchViewController {
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(
-            top: 5,
+            top: 0,
             leading: 5,
             bottom: 5,
             trailing: 5
@@ -230,14 +230,7 @@ extension SearchViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 10,
-            leading: 10,
-            bottom: 10,
-            trailing: 10
-        )
-        section.interGroupSpacing = 10
-
+        
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(44)
