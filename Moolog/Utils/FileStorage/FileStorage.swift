@@ -15,8 +15,8 @@ class FileStorage {
         image: String,
         filename: String
     ) {
-        var imageView = UIImageView()
-        if let imageURL = URL(string: image) {
+        let imageView = UIImageView()
+        if let imageURL = URL(string: URLConstant.imageURL + image) {
             imageView.kf.setImage(with: imageURL)
         }
         

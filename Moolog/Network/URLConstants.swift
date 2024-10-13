@@ -14,7 +14,7 @@ struct URLConstant {
         else { fatalError("BaseURL not found in Info.plist") }
         return baseURL
     }()
-    
+    static let imageURL: String = "https://image.tmdb.org/t/p/original"
     private init() { }
     
     static let version = "/3"
