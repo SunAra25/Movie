@@ -9,20 +9,23 @@ import UIKit
 
 final class ImageButton: UIButton {
     let title: String
-    let image: UIImage
+    let image: UIImage?
     let titleColor: UIColor
     let backColor: UIColor
+    let radius: CGFloat
     
     init(
         title: String,
-        image: UIImage,
+        image: UIImage?,
         titleColor: UIColor,
-        backColor: UIColor
+        backColor: UIColor,
+        radius: CGFloat
     ) {
         self.title = title
         self.image = image
         self.titleColor = titleColor
         self.backColor = backColor
+        self.radius = radius
         super.init(frame: .zero)
         
         configureButton()
@@ -39,11 +42,13 @@ final class ImageButton: UIButton {
         
         config.attributedTitle = attr
         config.image = image
+        config.imagePadding = 6
         
         configuration = config
         backgroundColor = backColor
+        tintColor = titleColor
         
-        layer.cornerRadius = 12
+        layer.cornerRadius = radius
         layer.masksToBounds = true
     }
 }
