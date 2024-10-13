@@ -37,6 +37,12 @@ final class FavoriteViewController: BaseNavigationViewController {
             }
             .disposed(by: disposeBag)
         
+        output.selectedMediaID
+            .drive(with: self) { owner, mediaID in
+                let vc = MediaDetailViewController(movieID: mediaID)
+                owner.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     override func setNavigation() {

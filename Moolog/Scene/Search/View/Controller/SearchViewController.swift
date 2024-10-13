@@ -107,12 +107,9 @@ final class SearchViewController: BaseNavigationViewController {
             .disposed(by: disposeBag)
         
         output.selectedMediaID
-            .drive(with: self) { _, mediaID in
-                print(mediaID)
-//                let vc = owner.navigationController?.pushViewController(
-//                    <#T##viewController: UIViewController##UIViewController#>,
-//                    animated: true
-//                )
+            .drive(with: self) { owner, mediaID in
+                let vc = MediaDetailViewController(movieID: mediaID)
+                owner.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
         
