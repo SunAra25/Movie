@@ -59,8 +59,6 @@
 		C9A2EA152CB6C4E800F99900 /* SearchViewModel in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA142CB6C4E800F99900 /* SearchViewModel */; };
 		C9A2EA192CB6C4FC00F99900 /* SearchCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA182CB6C4FC00F99900 /* SearchCell */; };
 		C9A2EA1C2CB6C50A00F99900 /* SearchController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA1B2CB6C50A00F99900 /* SearchController */; };
-		C9A2EA202CB6C52A00F99900 /* FavViewModel in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA1F2CB6C52A00F99900 /* FavViewModel */; };
-		C9A2EA242CB6C56000F99900 /* FavoriteController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA232CB6C56000F99900 /* FavoriteController */; };
 		C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA262CB6C58F00F99900 /* FavoriteCell */; };
 		C9A2EA2B2CB6C5CD00F99900 /* TrendVM in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA2A2CB6C5CD00F99900 /* TrendVM */; };
 		C9A2EA302CB6C5E800F99900 /* TrendEmptyController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */; };
@@ -118,8 +116,6 @@
 		C9A2EA142CB6C4E800F99900 /* SearchViewModel */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchViewModel; sourceTree = "<group>"; };
 		C9A2EA182CB6C4FC00F99900 /* SearchCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCell; sourceTree = "<group>"; };
 		C9A2EA1B2CB6C50A00F99900 /* SearchController */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchController; sourceTree = "<group>"; };
-		C9A2EA1F2CB6C52A00F99900 /* FavViewModel */ = {isa = PBXFileReference; lastKnownFileType = text; path = FavViewModel; sourceTree = "<group>"; };
-		C9A2EA232CB6C56000F99900 /* FavoriteController */ = {isa = PBXFileReference; lastKnownFileType = text; path = FavoriteController; sourceTree = "<group>"; };
 		C9A2EA262CB6C58F00F99900 /* FavoriteCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = FavoriteCell; sourceTree = "<group>"; };
 		C9A2EA2A2CB6C5CD00F99900 /* TrendVM */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendVM; sourceTree = "<group>"; };
 		C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendEmptyController; sourceTree = "<group>"; };
@@ -414,7 +410,6 @@
 		C9A2EA1E2CB6C52000F99900 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA1F2CB6C52A00F99900 /* FavViewModel */,
 				C91BDAF62CBB728C001E0595 /* FavoriteViewModel.swift */,
 			);
 			path = ViewModel;
@@ -432,7 +427,6 @@
 		C9A2EA222CB6C55700F99900 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA232CB6C56000F99900 /* FavoriteController */,
 				C91BDAF42CBAC29B001E0595 /* FavoriteViewController.swift */,
 			);
 			path = Controller;
@@ -618,9 +612,7 @@
 				C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */,
 				C9FBC3622CB6574A00EBAE11 /* Base in Resources */,
 				C9A2EA302CB6C5E800F99900 /* TrendEmptyController in Resources */,
-				C9A2EA242CB6C56000F99900 /* FavoriteController in Resources */,
 				C9A2EA342CB6C60500F99900 /* TrendEmptyCell in Resources */,
-				C9A2EA202CB6C52A00F99900 /* FavViewModel in Resources */,
 				C91BDAFB2CBB75F1001E0595 /* Secrets.xcconfig in Resources */,
 				C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */,
 				C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */,
