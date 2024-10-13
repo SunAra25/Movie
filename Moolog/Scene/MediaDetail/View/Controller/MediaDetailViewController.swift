@@ -75,6 +75,7 @@ final class MediaDetailViewController: BaseViewController {
             CreditCollectionViewCell.self,
             forCellWithReuseIdentifier: CreditCollectionViewCell.identifier
         )
+        view.backgroundColor = .clear
         return view
     }()
     private let headerLabel: UILabel = {
@@ -94,6 +95,7 @@ final class MediaDetailViewController: BaseViewController {
             forCellWithReuseIdentifier: SimilarCollectionViewCell.identifier
         )
         view.isScrollEnabled = false
+        view.backgroundColor = .clear
         return view
     }()
     private let creditLayout: UICollectionViewFlowLayout = {

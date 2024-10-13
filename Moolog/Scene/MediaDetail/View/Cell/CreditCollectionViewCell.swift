@@ -13,12 +13,15 @@ import SnapKit
 final class CreditCollectionViewCell: BaseCollectionViewCell {
     private let imageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.layer.cornerRadius = 28
+        view.clipsToBounds = true
         return view
     }()
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .body2
-        label.textColor = .baseBG
+        label.textColor = .white.withAlphaComponent(0.8)
         return label
     }()
     
