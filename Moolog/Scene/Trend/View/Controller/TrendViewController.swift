@@ -19,6 +19,7 @@ final class TrendViewController: BaseNavigationViewController {
             target: self,
             action: nil
         )
+        button.tintColor = .white
         return button
     }()
     private let scrollView = UIScrollView()
@@ -143,7 +144,9 @@ final class TrendViewController: BaseNavigationViewController {
         scrollView.addSubview(contentView)
      
         contentView.addSubview(mainPosterView)
+        contentView.addSubview(movieSectionLabel)
         contentView.addSubview(movieCollectionView)
+        contentView.addSubview(tvSeriesSectionLabel)
         contentView.addSubview(seriesCollectionView)
     }
     
@@ -157,17 +160,25 @@ final class TrendViewController: BaseNavigationViewController {
             make.width.equalToSuperview()
         }
         mainPosterView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(mainPosterView.snp.width).multipliedBy(1.5)
         }
-        movieCollectionView.snp.makeConstraints { make in
+        movieSectionLabel.snp.makeConstraints { make in
             make.top.equalTo(mainPosterView.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        movieCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(movieSectionLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(180)
         }
-        seriesCollectionView.snp.makeConstraints { make in
+        tvSeriesSectionLabel.snp.makeConstraints { make in
             make.top.equalTo(movieCollectionView.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        seriesCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(tvSeriesSectionLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(180)
             make.bottom.equalToSuperview().offset(-20)
@@ -179,28 +190,3 @@ final class TrendViewController: BaseNavigationViewController {
         navigationItem.rightBarButtonItem = searchButton
     }
 }
-
-//extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        numberOfItemsInSection section: Int
-//    ) -> Int {
-//        return 100
-//    }
-//    
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        cellForItemAt indexPath: IndexPath
-//    ) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(
-//            withReuseIdentifier: TrendMovieCollectionViewCell.identifier,
-//            for: indexPath
-//        ) as? TrendMovieCollectionViewCell else {
-//            return UICollectionViewCell()
-//        }
-//
-//        return cell
-//    }
-//    
-//    
-//}

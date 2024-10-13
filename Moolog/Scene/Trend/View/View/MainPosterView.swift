@@ -35,8 +35,8 @@ final class MainPosterView: BaseView {
     let saveButton = ImageButton(
         title: "내가 찜한 리스트",
         image: UIImage(systemName: "plus"),
-        foreColor: .black,
-        backColor: .white,
+        foreColor: .white,
+        backColor: .black,
         radius: 8
     )
     override func setLayout() {
@@ -46,9 +46,9 @@ final class MainPosterView: BaseView {
         imageView.addSubview(saveButton)
         
         imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+            make.top.equalToSuperview().offset(8)
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().offset(-8)
             make.height.equalTo(imageView.snp.width).multipliedBy(1.5)
         }
         genreLabel.snp.makeConstraints { make in
@@ -59,8 +59,8 @@ final class MainPosterView: BaseView {
         playButton.snp.makeConstraints { make in
             make.bottom.equalTo(imageView.snp.bottom).offset(-16)
             make.leading.equalTo(imageView.snp.leading).offset(16)
-            make.height.equalTo(44)
-            make.width.equalTo(120)
+            make.height.equalTo(36)
+            make.width.equalTo(130)
         }
         saveButton.snp.makeConstraints { make in
             make.centerY.equalTo(playButton)
