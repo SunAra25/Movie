@@ -60,8 +60,7 @@ final class MediaTableViewCell: BaseTableViewCell {
     
     func configureUI(posterImg: String, mediaTitle: String, isSearch: Bool) {
         if isSearch {
-            let imageURL = "https://image.tmdb.org/t/p/original"
-            posterView.kf.setImage(with: URL(string: imageURL + posterImg))
+            posterView.kf.setImage(with: URL(string: URLConstant.imageURL + posterImg))
         } else {
             posterView.image = FileStorage.loadImageToDocument(filename: posterImg)
         }
