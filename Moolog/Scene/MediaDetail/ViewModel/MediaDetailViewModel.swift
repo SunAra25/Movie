@@ -14,12 +14,13 @@ final class MediaDetailViewModel: ViewModelType {
     var disposeBag: DisposeBag =  DisposeBag()
     let movieID: Int
     let manager: NetworkType
+    private let favRepository = FavoriteMovieRepository()
     
     struct Input {
         let viewWillAppear: Observable<Void>
         let closeBtnTap: Observable<Void>
         let playBtnTap: Observable<Void>
-        let saveBtnTap: Observable<Void>
+        let saveBtnTap: Observable<(String, String)>
     }
     
     struct Output {
@@ -27,6 +28,7 @@ final class MediaDetailViewModel: ViewModelType {
         let creditList: Driver<[Cast]>
         let similarList: Driver<[SimilarResult]>
         let showVideoView: Driver<Void>
+        let showAlert: Driver<String>
         let dismiss: Driver<Void>
     }
     
@@ -42,6 +44,7 @@ final class MediaDetailViewModel: ViewModelType {
         let movieDetail = PublishRelay<MovieDetailResponse>()
         let creditList = PublishRelay<[Cast]>()
         let similarList = PublishRelay<[SimilarResult]>()
+        let showAlert = PublishRelay<String>()
         
         input.viewWillAppear
             .flatMap { [weak self] _ in
@@ -106,8 +109,16 @@ final class MediaDetailViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         input.saveBtnTap
-            .bind(with: self) { owner, _ in
-                // TODO: Realm 저장
+            .bind(with: self) { owner, values in
+                let (title, path) = values
+                
+                if owner.favRepository.fetchData()
+                    .contains(where: { $0.id == owner.movieID }) {
+                    showAlert.accept(Constant.AlertTitle.already.rawValue)
+                } else {
+                    owner.saveMovie(title: title, path: path)
+                    showAlert.accept(Constant.AlertTitle.saved.rawValue)
+                }
             }
             .disposed(by: disposeBag)
         
@@ -115,8 +126,23 @@ final class MediaDetailViewModel: ViewModelType {
             movieDetail: movieDetail.asDriver(onErrorDriveWith: .empty()),
             creditList: creditList.asDriver(onErrorJustReturn: []),
             similarList: similarList.asDriver(onErrorJustReturn: []),
-            showVideoView: input.playBtnTap.asDriver(onErrorDriveWith: .empty()),
+            showVideoView: input.playBtnTap.asDriver(onErrorDriveWith: .empty()), 
+            showAlert: showAlert.asDriver(onErrorDriveWith: .empty()),
             dismiss: input.closeBtnTap.asDriver(onErrorDriveWith: .empty())
         )
+    }
+    
+    func saveMovie(title: String, path: String) {
+        Task {
+            await FileStorage.saveImageToDocument(
+                image: path,
+                filename: String(movieID)
+            )
+        }
+        
+        favRepository.createItem(.init(
+            id: movieID,
+            title: title
+        ))
     }
 }
