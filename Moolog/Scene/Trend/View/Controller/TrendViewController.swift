@@ -92,12 +92,18 @@ final class TrendViewController: BaseNavigationViewController {
             viewWillAppear: rx.viewWillAppear,
             searchBtnTap: searchButton.rx.tap.asObservable(),
             movieSelectedCell: movieCollectionView.rx.modelSelected(TrendingMovie.self)
-                .map{ $0.id },
+                .map { $0.id },
             seriesSelectedCell: seriesCollectionView.rx.modelSelected(TrendingTV.self)
-                .map{ $0.id }
+                .map { $0.id }
         )
         let output = viewModel.transform(input: input)
         
+        output.serachBtnTap
+            .drive(with: self) { _, _ in
+                let vc = SearchViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
         output.randomMovie
             .drive(onNext: { [weak self] movie in
                         self?.mainPosterView.configureUI(movie)
