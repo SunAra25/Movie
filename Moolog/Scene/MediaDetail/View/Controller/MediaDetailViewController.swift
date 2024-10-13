@@ -132,6 +132,8 @@ final class MediaDetailViewController: BaseViewController {
     }()
     let viewModel: MediaDetailViewModel
     let disposeBag: DisposeBag = DisposeBag()
+    private var movieTitle = ""
+    private var posterPath = ""
     
     init(movieID: Int) {
         self.viewModel = MediaDetailViewModel(
@@ -150,7 +152,10 @@ final class MediaDetailViewController: BaseViewController {
             viewWillAppear: rx.viewWillAppear,
             closeBtnTap: closeButton.rx.tap.asObservable(),
             playBtnTap: playButton.rx.tap.asObservable(),
-            saveBtnTap: saveButton.rx.tap.asObservable()
+            saveBtnTap: saveButton.rx.tap.map { [weak self] _ in
+                guard let self else { return ("", "") }
+                return (movieTitle, posterPath)
+            }.asObservable()
         )
         let output = viewModel.transform(input: input)
         
@@ -162,6 +167,8 @@ final class MediaDetailViewController: BaseViewController {
                 averageLabel.text = String(format: "%.1f", response.voteAverage) 
                 overviewLabel.text = response.overview
                 backdropImageView.kf.setImage(with: URL(string: url))
+                movieTitle = response.title
+                posterPath = response.posterPath
             }
             .disposed(by: disposeBag)
         

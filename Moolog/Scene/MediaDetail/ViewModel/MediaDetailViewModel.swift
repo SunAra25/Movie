@@ -14,12 +14,13 @@ final class MediaDetailViewModel: ViewModelType {
     var disposeBag: DisposeBag =  DisposeBag()
     let movieID: Int
     let manager: NetworkType
+    private let favRepository = FavoriteMovieRepository()
     
     struct Input {
         let viewWillAppear: Observable<Void>
         let closeBtnTap: Observable<Void>
         let playBtnTap: Observable<Void>
-        let saveBtnTap: Observable<Void>
+        let saveBtnTap: Observable<(String, String)>
     }
     
     struct Output {
@@ -106,8 +107,20 @@ final class MediaDetailViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         input.saveBtnTap
-            .bind(with: self) { owner, _ in
-                // TODO: Realm 저장
+            .bind(with: self) { owner, values in
+                let (title, path) = values
+                
+                Task {
+                    await FileStorage.saveImageToDocument(
+                        image: path,
+                        filename: String(owner.movieID)
+                    )
+                }
+                
+                owner.favRepository.createItem(.init(
+                    id: owner.movieID,
+                    title: title
+                ))
             }
             .disposed(by: disposeBag)
         
