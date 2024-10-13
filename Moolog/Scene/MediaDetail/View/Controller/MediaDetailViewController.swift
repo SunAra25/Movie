@@ -93,6 +93,7 @@ final class MediaDetailViewController: BaseViewController {
             SimilarCollectionViewCell.self,
             forCellWithReuseIdentifier: SimilarCollectionViewCell.identifier
         )
+        view.isScrollEnabled = false
         return view
     }()
     private let creditLayout: UICollectionViewFlowLayout = {
@@ -112,7 +113,7 @@ final class MediaDetailViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         let screenWidth = Constant.Numeric.screenWidth.value
         let padding = Constant.Numeric.horiSpacing.value * 2
-        let itemWidth = (screenWidth - padding) / 3
+        let itemWidth = (screenWidth - padding - 8) / 3
         layout.itemSize = CGSize(
             width: itemWidth,
             height: itemWidth * 4 / 3
@@ -154,7 +155,7 @@ final class MediaDetailViewController: BaseViewController {
         output.movieDetail
             .drive { [weak self] response in
                 guard let self else { return }
-                let url = "https://image.tmdb.org/t/p/original/" + response.backdropPath
+                let url = "https://image.tmdb.org/t/p/w400" + response.backdropPath
                 titleLabel.text = response.title
                 averageLabel.text = String(format: "%.1f", response.voteAverage) 
                 overviewLabel.text = response.overview
@@ -177,6 +178,7 @@ final class MediaDetailViewController: BaseViewController {
                 cellType: SimilarCollectionViewCell.self
             )) { _, element, cell in
                 cell.configureUI(element)
+                self.similarCollectionView.layoutIfNeeded()
             }
             .disposed(by: disposeBag)
         
@@ -200,8 +202,8 @@ final class MediaDetailViewController: BaseViewController {
         scrollView.addSubview(contentView)
         
         [
-            closeView,
             backdropImageView,
+            closeView,
             titleLabel,
             averageLabel,
             playButton,
@@ -218,12 +220,18 @@ final class MediaDetailViewController: BaseViewController {
     }
     
     override func setConstraints() {
+        let screenWidth = Constant.Numeric.screenWidth.value
+        let padding = Constant.Numeric.horiSpacing.value * 2
+        let itemWidth = (screenWidth - padding - 8) / 3
+        let itemHeight = itemWidth * 4 / 3
+        
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
         contentView.snp.makeConstraints { make in
-            make.edges.width.equalToSuperview()
+            make.top.width.equalToSuperview()
+            make.bottom.greaterThanOrEqualToSuperview()
         }
         
         backdropImageView.snp.makeConstraints { make in
@@ -290,8 +298,8 @@ final class MediaDetailViewController: BaseViewController {
         similarCollectionView.snp.makeConstraints { make in
             make.top.equalTo(headerLabel.snp.bottom).offset(4)
             make.horizontalEdges.equalToSuperview()
-                .inset(Constant.Numeric.horiSpacing.value)
             make.bottom.equalToSuperview()
+            make.height.equalTo(itemHeight * 7 + 24)
         }
     }
 }
