@@ -64,15 +64,15 @@ final class MediaDetailViewController: BaseViewController {
         return label
     }()
     private lazy var creditCollectionView: UICollectionView = {
-        let cv = UICollectionView(
+        let view = UICollectionView(
             frame: .zero,
             collectionViewLayout: self.creditLayout
         )
-        cv.register(
+        view.register(
             CreditCollectionViewCell.self,
             forCellWithReuseIdentifier: CreditCollectionViewCell.identifier
         )
-        return cv
+        return view
     }()
     private let headerLabel: UILabel = {
         let label = UILabel()
@@ -82,15 +82,15 @@ final class MediaDetailViewController: BaseViewController {
         return label
     }()
     private lazy var similarCollectionView: UICollectionView = {
-        let cv = UICollectionView(
+        let view = UICollectionView(
             frame: .zero,
             collectionViewLayout: self.similarLayout
         )
-        cv.register(
+        view.register(
             SimilarCollectionViewCell.self,
             forCellWithReuseIdentifier: SimilarCollectionViewCell.identifier
         )
-        return cv
+        return view
     }()
     private let creditLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()

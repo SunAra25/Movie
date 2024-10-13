@@ -11,7 +11,7 @@ import RxSwift
 import SnapKit
 
 final class MediaTableView: BaseView {
-    lazy var tableView: UITableView = {
+    var tableView: UITableView = {
         let view = UITableView()
         view.register(
             MediaTableViewCell.self,
@@ -21,6 +21,7 @@ final class MediaTableView: BaseView {
             MediaTableHeaderCell.self,
             forCellReuseIdentifier: MediaTableHeaderCell.identifier
         )
+        view.rowHeight = 110
         return view
     }()
     
