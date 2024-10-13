@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 
 final class SimilarCollectionViewCell: BaseCollectionViewCell {
@@ -23,5 +24,11 @@ final class SimilarCollectionViewCell: BaseCollectionViewCell {
         posterImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    func configureUI(_ data: SimilarResult) {
+        guard let posterPath = data.posterPath else { return }
+        let url = "https://image.tmdb.org/t/p/original/" + posterPath
+        posterImageView.kf.setImage(with: URL(string: url))
     }
 }

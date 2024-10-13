@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 
 final class CreditCollectionViewCell: BaseCollectionViewCell {
@@ -39,5 +40,12 @@ final class CreditCollectionViewCell: BaseCollectionViewCell {
             make.top.equalTo(imageView.snp.bottom).offset(4)
             make.horizontalEdges.bottom.equalToSuperview().inset(4)
         }
+    }
+    
+    func configureUI(_ data: Cast) {
+        guard let profilePath = data.profilePath else { return }
+        let url = "https://image.tmdb.org/t/p/original/" + profilePath
+        imageView.kf.setImage(with: URL(string: url))
+        nameLabel.text = data.originalName
     }
 }

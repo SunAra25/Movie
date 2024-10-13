@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = MediaDetailViewController(movieID: 569094)
         window?.makeKeyAndVisible()
     }
 

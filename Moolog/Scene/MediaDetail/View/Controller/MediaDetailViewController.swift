@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Kingfisher
+import RxCocoa
+import RxSwift
 import SnapKit
 
 final class MediaDetailViewController: BaseViewController {
@@ -124,6 +127,72 @@ final class MediaDetailViewController: BaseViewController {
         )
         return layout
     }()
+    let viewModel: MediaDetailViewModel
+    let disposeBag: DisposeBag = DisposeBag()
+    
+    init(movieID: Int) {
+        self.viewModel = MediaDetailViewModel(
+            movieID: movieID,
+            manager: NetworkManager()
+        )
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func bind() {
+        let input = MediaDetailViewModel.Input(
+            viewWillAppear: rx.viewWillAppear,
+            closeBtnTap: closeButton.rx.tap.asObservable(),
+            playBtnTap: playButton.rx.tap.asObservable(),
+            saveBtnTap: saveButton.rx.tap.asObservable()
+        )
+        let output = viewModel.transform(input: input)
+        
+        output.movieDetail
+            .drive { [weak self] response in
+                guard let self else { return }
+                let url = "https://image.tmdb.org/t/p/original/" + response.backdropPath
+                titleLabel.text = response.title
+                averageLabel.text = String(format: "%.1f", response.voteAverage) 
+                overviewLabel.text = response.overview
+                backdropImageView.kf.setImage(with: URL(string: url))
+            }
+            .disposed(by: disposeBag)
+        
+        output.creditList
+            .drive(creditCollectionView.rx.items(
+                cellIdentifier: CreditCollectionViewCell.identifier,
+                cellType: CreditCollectionViewCell.self
+            )) { _, element, cell in
+                cell.configureUI(element)
+            }
+            .disposed(by: disposeBag)
+        
+        output.similarList
+            .drive(similarCollectionView.rx.items(
+                cellIdentifier: SimilarCollectionViewCell.identifier,
+                cellType: SimilarCollectionViewCell.self
+            )) { _, element, cell in
+                cell.configureUI(element)
+            }
+            .disposed(by: disposeBag)
+        
+        output.showVideoView
+            .drive { _ in
+                // TODO: 예고편 재생
+            }
+            .disposed(by: disposeBag)
+        
+        output.dismiss
+            .drive { [weak self] _ in
+                guard let self else { return }
+                dismiss(animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
     
     override func setHierarchy() {
         view.addSubview(scrollView)
