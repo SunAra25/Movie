@@ -37,9 +37,14 @@ final class FavoriteViewController: BaseNavigationViewController {
             .disposed(by: disposeBag)
         
     }
-    override func setHierarchy() {
-        title = Constant.NavigationTitle.searchTitle.rawValue
+    
+    override func setNavigation() {
+        super.setNavigation()
         
+        title = Constant.NavigationTitle.searchTitle.rawValue
+    }
+    
+    override func setHierarchy() {
         view.addSubview(favTableView)
     }
     override func setConstraints() {
