@@ -107,7 +107,7 @@ final class SearchViewModel: ViewModelType {
             .filter { owner, indexPathArray in
                 if let indexPath = indexPathArray.first,
                    let searchedList = searchedDataSource.value.first {
-                    return indexPath.row > searchedList.items.count - 5 
+                    return indexPath.row > searchedList.items.count - 5
                     && owner.currentPage < owner.totalPages
                 } else {
                     return false
