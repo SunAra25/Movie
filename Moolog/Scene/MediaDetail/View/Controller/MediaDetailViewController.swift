@@ -63,6 +63,67 @@ final class MediaDetailViewController: BaseViewController {
         label.numberOfLines = 0
         return label
     }()
+    private lazy var creditCollectionView: UICollectionView = {
+        let cv = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: self.creditLayout
+        )
+        cv.register(
+            CreditCollectionViewCell.self,
+            forCellWithReuseIdentifier: CreditCollectionViewCell.identifier
+        )
+        return cv
+    }()
+    private let headerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "비슷한 콘텐츠"
+        label.font = .sub
+        label.textColor = .white
+        return label
+    }()
+    private lazy var similarCollectionView: UICollectionView = {
+        let cv = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: self.similarLayout
+        )
+        cv.register(
+            SimilarCollectionViewCell.self,
+            forCellWithReuseIdentifier: SimilarCollectionViewCell.identifier
+        )
+        return cv
+    }()
+    private let creditLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 80, height: 100)
+        layout.minimumLineSpacing = 4
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(
+            top: 0,
+            left: Constant.Numeric.horiSpacing.value,
+            bottom: 0,
+            right: Constant.Numeric.horiSpacing.value
+        )
+        return layout
+    }()
+    private let similarLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        let screenWidth = Constant.Numeric.screenWidth.value
+        let padding = Constant.Numeric.horiSpacing.value * 2
+        let itemWidth = (screenWidth - padding) / 3
+        layout.itemSize = CGSize(
+            width: itemWidth,
+            height: itemWidth * 4 / 3
+        )
+        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 4
+        layout.sectionInset = UIEdgeInsets(
+            top: 0,
+            left: Constant.Numeric.horiSpacing.value,
+            bottom: 0,
+            right: Constant.Numeric.horiSpacing.value
+        )
+        return layout
+    }()
     
     override func setHierarchy() {
         view.addSubview(scrollView)
@@ -76,7 +137,10 @@ final class MediaDetailViewController: BaseViewController {
             averageLabel,
             playButton,
             saveButton,
-            overviewLabel
+            overviewLabel,
+            creditCollectionView,
+            headerLabel,
+            similarCollectionView
         ].forEach {
             contentView.addSubview($0)
         }
@@ -138,6 +202,24 @@ final class MediaDetailViewController: BaseViewController {
         
         overviewLabel.snp.makeConstraints { make in
             make.top.equalTo(saveButton.snp.bottom).offset(6)
+            make.horizontalEdges.equalToSuperview()
+                .inset(Constant.Numeric.horiSpacing.value)
+        }
+        
+        creditCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(overviewLabel.snp.bottom).offset(4)
+            make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(100)
+        }
+        
+        headerLabel.snp.makeConstraints { make in
+            make.top.equalTo(creditCollectionView.snp.bottom).offset(4)
+            make.horizontalEdges.equalToSuperview()
+                .inset(Constant.Numeric.horiSpacing.value)
+        }
+        
+        similarCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(headerLabel.snp.bottom).offset(4)
             make.horizontalEdges.equalToSuperview()
                 .inset(Constant.Numeric.horiSpacing.value)
             make.bottom.equalToSuperview()
