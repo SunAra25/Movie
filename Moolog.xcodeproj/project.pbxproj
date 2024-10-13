@@ -60,9 +60,6 @@
 		C9A2EA192CB6C4FC00F99900 /* SearchCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA182CB6C4FC00F99900 /* SearchCell */; };
 		C9A2EA1C2CB6C50A00F99900 /* SearchController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA1B2CB6C50A00F99900 /* SearchController */; };
 		C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA262CB6C58F00F99900 /* FavoriteCell */; };
-		C9A2EA2B2CB6C5CD00F99900 /* TrendVM in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA2A2CB6C5CD00F99900 /* TrendVM */; };
-		C9A2EA302CB6C5E800F99900 /* TrendEmptyController in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */; };
-		C9A2EA342CB6C60500F99900 /* TrendEmptyCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA332CB6C60500F99900 /* TrendEmptyCell */; };
 		C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */; };
 		C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */; };
 		C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3592CB6574A00EBAE11 /* ViewController.swift */; };
@@ -117,9 +114,6 @@
 		C9A2EA182CB6C4FC00F99900 /* SearchCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchCell; sourceTree = "<group>"; };
 		C9A2EA1B2CB6C50A00F99900 /* SearchController */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchController; sourceTree = "<group>"; };
 		C9A2EA262CB6C58F00F99900 /* FavoriteCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = FavoriteCell; sourceTree = "<group>"; };
-		C9A2EA2A2CB6C5CD00F99900 /* TrendVM */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendVM; sourceTree = "<group>"; };
-		C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendEmptyController; sourceTree = "<group>"; };
-		C9A2EA332CB6C60500F99900 /* TrendEmptyCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrendEmptyCell; sourceTree = "<group>"; };
 		C9DC487C2CB7517A0073F3C3 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9FBC3522CB6574A00EBAE11 /* Moolog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moolog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -452,7 +446,6 @@
 		C9A2EA292CB6C5C200F99900 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA2A2CB6C5CD00F99900 /* TrendVM */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -469,7 +462,6 @@
 		C9A2EA2D2CB6C5D700F99900 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA2F2CB6C5E800F99900 /* TrendEmptyController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -477,7 +469,6 @@
 		C9A2EA312CB6C5F300F99900 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2EA332CB6C60500F99900 /* TrendEmptyCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -608,11 +599,8 @@
 				C9FBC35F2CB6574A00EBAE11 /* Assets.xcassets in Resources */,
 				C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */,
 				C9A2EA192CB6C4FC00F99900 /* SearchCell in Resources */,
-				C9A2EA2B2CB6C5CD00F99900 /* TrendVM in Resources */,
 				C0C34E2E2CB7B6B400299564 /* Pretendard-Medium.otf in Resources */,
 				C9FBC3622CB6574A00EBAE11 /* Base in Resources */,
-				C9A2EA302CB6C5E800F99900 /* TrendEmptyController in Resources */,
-				C9A2EA342CB6C60500F99900 /* TrendEmptyCell in Resources */,
 				C91BDAFB2CBB75F1001E0595 /* Secrets.xcconfig in Resources */,
 				C9A2E9FD2CB6C36D00F99900 /* ModelEmptyFile in Resources */,
 				C9A2E9F42CB6C2DC00F99900 /* EnumEmptyFile in Resources */,
