@@ -12,9 +12,18 @@ import RxSwift
 import SnapKit
 
 final class TrendViewController: BaseNavigationViewController {
+    lazy var searchButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(
+            image: UIImage(systemName: "magnifyingglass"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        return button
+    }()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-    private let mainPosterView = UIView()
+    private let mainPosterView = MainPosterView()
     private let movieSectionLabel: UILabel = {
         let label = UILabel()
         label.text = Constant.SectionHeader.risingMovie.rawValue
@@ -59,7 +68,7 @@ final class TrendViewController: BaseNavigationViewController {
         let layout = UICollectionViewFlowLayout()
         let screenWidth = Constant.Numeric.screenWidth.value
         let padding = Constant.Numeric.horiSpacing.value * 2
-        let itemWidth = (screenWidth - padding - 10 * 3) / 4
+        let itemWidth = (screenWidth - padding - 10 * 2) / 3
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(
             width: itemWidth,
@@ -74,6 +83,59 @@ final class TrendViewController: BaseNavigationViewController {
         )
         return layout
     }()
+    let viewModel = TrendViewModel(networkManager: NetworkManager())
+    let disposeBag = DisposeBag()
+    
+    override func bind() {
+        let input = TrendViewModel.Input(
+            viewWillAppear: rx.viewWillAppear,
+            searchBtnTap: searchButton.rx.tap.asObservable(),
+            movieSelectedCell: movieCollectionView.rx.modelSelected(TrendingMovie.self)
+                .map{ $0.id },
+            seriesSelectedCell: seriesCollectionView.rx.modelSelected(TrendingTV.self)
+                .map{ $0.id }
+        )
+        let output = viewModel.transform(input: input)
+        
+        output.randomMovie
+            .drive(onNext: { [weak self] movie in
+                        self?.mainPosterView.configureUI(movie)
+                    })
+            .disposed(by: disposeBag)
+        output.movieList
+            .drive(movieCollectionView.rx.items(
+                cellIdentifier: TrendMovieCollectionViewCell.identifier,
+                cellType: TrendMovieCollectionViewCell.self
+            )) { _, element, cell in
+                cell.configureUI(element)
+            }
+            .disposed(by: disposeBag)
+        output.seriesList
+            .drive(seriesCollectionView.rx.items(
+                cellIdentifier: TrendSeriesCollectionViewCell.identifier,
+                cellType: TrendSeriesCollectionViewCell.self
+            )) { _, element, cell in
+                cell.configureUI(element)
+            }
+            .disposed(by: disposeBag)
+        
+        output.selectedMovieID
+            .drive(with: self) { _, id in
+                print(id)
+//                let vc = MediaDetailViewController(movieID: id)
+//                vc.modalPresentationStyle = .fullScreen
+//                show(nav, sender: self)
+            }
+            .disposed(by: disposeBag)
+        output.selectedSeriesID
+            .drive(with: self) { _, id in
+                print(id)
+//                let vc = MediaDetailViewController(movieID: id)
+//                vc.modalPresentationStyle = .fullScreen
+//                show(nav, sender: self)
+            }
+            .disposed(by: disposeBag)
+    }
     
     override func setHierarchy() {
         self.view.addSubview(scrollView)
@@ -84,6 +146,7 @@ final class TrendViewController: BaseNavigationViewController {
         contentView.addSubview(movieCollectionView)
         contentView.addSubview(seriesCollectionView)
     }
+    
     override func setConstraints() {
         
         scrollView.snp.makeConstraints { make in
@@ -109,10 +172,11 @@ final class TrendViewController: BaseNavigationViewController {
             make.height.equalTo(180)
             make.bottom.equalToSuperview().offset(-20)
         }
-        // TODO: test 지우기
-        view.backgroundColor = .white
-        mainPosterView.backgroundColor = .yellow
-        movieCollectionView.backgroundColor = .blue
+
+    }
+    override func setNavigation() {
+        super.setNavigation()
+        navigationItem.rightBarButtonItem = searchButton
     }
 }
 

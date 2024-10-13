@@ -7,7 +7,8 @@
 
 import UIKit
 
-import Kingfisher
+import RxCocoa
+import RxSwift
 import SnapKit
 
 final class MainPosterView: BaseView {
@@ -18,7 +19,7 @@ final class MainPosterView: BaseView {
         view.clipsToBounds = true
         return view
     }()
-    let genreLabel: UILabel = {
+    private let genreLabel: UILabel = {
         let label = UILabel()
         label.font = .body2
         label.textColor = .white
@@ -70,5 +71,9 @@ final class MainPosterView: BaseView {
         
         // MARK: TEST
         genreLabel.text = "애니메이션 가족 코미디 드라마"
+    }
+    func configureUI(_ data: TrendingMovie) {
+        let url = "https://image.tmdb.org/t/p/original/" + data.posterPath
+        imageView.kf.setImage(with: URL(string: url))
     }
 }
