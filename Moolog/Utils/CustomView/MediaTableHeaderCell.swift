@@ -12,8 +12,9 @@ import SnapKit
 final class MediaTableHeaderCell: BaseTableViewCell {
     private var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .white
         label.textAlignment = .left
+        label.font = .title
         return label
     }()
     

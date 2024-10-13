@@ -56,7 +56,7 @@ final class MediaTableViewCell: BaseTableViewCell {
     }
     
     func configureUI(posterImg: String, mediaTitle: String) {
-        posterView.kf.setImage(with: URL(string: posterImg))
+        posterView.image = FileStorage.loadImageToDocument(filename: posterImg)
         mediaTitleLabel.text = mediaTitle
     }
 }

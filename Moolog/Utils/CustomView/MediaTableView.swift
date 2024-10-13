@@ -21,6 +21,7 @@ final class MediaTableView: BaseView {
             MediaTableHeaderCell.self,
             forCellReuseIdentifier: MediaTableHeaderCell.identifier
         )
+        view.rowHeight = 110
         return view
     }()
     
