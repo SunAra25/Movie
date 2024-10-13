@@ -14,7 +14,7 @@ import SnapKit
 
 final class SearchViewController: BaseNavigationViewController {
     var disposeBag: DisposeBag = DisposeBag()
-    private var searchController: UISearchController = {
+    private let searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.placeholder = "시리즈 및 영화를 검색해보세요"
         return search
@@ -35,8 +35,8 @@ final class SearchViewController: BaseNavigationViewController {
         )
         return view
     }()
-    private lazy var trendingTableView = MediaTableView()
-    private var emptyLabel: UILabel = {
+    private let trendingTableView = MediaTableView()
+    private let emptyLabel: UILabel = {
         let label = UILabel()
         label.text = "검색 결과가 없습니다."
         label.textColor = .white

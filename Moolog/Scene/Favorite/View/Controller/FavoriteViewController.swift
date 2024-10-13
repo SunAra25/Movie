@@ -13,7 +13,7 @@ import SnapKit
 
 final class FavoriteViewController: BaseNavigationViewController {
     var disposeBag = DisposeBag()
-    private var favTableView = MediaTableView()
+    private let favTableView = MediaTableView()
     private let viewModel = FavoriteViewModel()
     
     override func bind() {
