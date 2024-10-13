@@ -197,6 +197,20 @@ final class MediaDetailViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
+        output.showAlert
+            .drive { [weak self] title in
+                guard let self else { return }
+                let alert = UIAlertController(
+                    title: title,
+                    message: nil,
+                    preferredStyle: .alert
+                )
+                let button = UIAlertAction(title: "확인", style: .default)
+                alert.addAction(button)
+                present(alert, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         output.dismiss
             .drive { [weak self] _ in
                 guard let self else { return }
