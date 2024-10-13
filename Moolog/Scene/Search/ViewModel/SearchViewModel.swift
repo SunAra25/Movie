@@ -22,24 +22,22 @@ final class SearchViewModel: ViewModelType {
         let viewWillAppear: Observable<Void>
         let searchedText: Observable<String>
         let seachCancelled: Observable<Void>
+        let cvSelectedCell: Observable<Int>
+        let tvSelectedCell: Observable<Int>
     }
     
     struct Output {
         let trendMovie: Driver<[SearchTrendingSectionModel]>
         let searchedDataSources: Driver<[SearchMovieSectionModel]>
         let isSearched: Driver<Bool>
+        let selectedMediaID: Driver<Int>
     }
     
     func transform(input: Input) -> Output {
-        let trendMovie = PublishRelay<[SearchTrendingSectionModel]>()
+        let trendMovie = BehaviorRelay<[SearchTrendingSectionModel]>(value: [])
         let searchedDataSource = BehaviorRelay<[SearchMovieSectionModel]>(value: [])
-        let searchedOriginal = BehaviorRelay<SearchResponse>(value: .init(
-            page: 0,
-            results: [],
-            totalPages: 0,
-            totalResults: 0
-        ))
         let isSearched = PublishRelay<Bool>()
+        let selectedMediaID = PublishRelay<Int>()
         
         input.viewWillAppear
             .bind(with: self) { owner, _ in
@@ -100,10 +98,19 @@ final class SearchViewModel: ViewModelType {
             }
             .disposed(by: disposeBag)
         
+        input.cvSelectedCell
+            .bind(to: selectedMediaID)
+            .disposed(by: disposeBag)
+        
+        input.tvSelectedCell
+            .bind(to: selectedMediaID)
+            .disposed(by: disposeBag)
+        
         return Output(
             trendMovie: trendMovie.asDriver(onErrorJustReturn: []),
             searchedDataSources: searchedDataSource.asDriver(onErrorJustReturn: []),
-            isSearched: isSearched.asDriver(onErrorJustReturn: false)
+            isSearched: isSearched.asDriver(onErrorJustReturn: false),
+            selectedMediaID: selectedMediaID.asDriver(onErrorJustReturn: 0)
         )
     }
 }

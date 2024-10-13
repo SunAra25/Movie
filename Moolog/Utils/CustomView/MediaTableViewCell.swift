@@ -47,6 +47,8 @@ final class MediaTableViewCell: BaseTableViewCell {
                 .inset(-Constant.Numeric.vertiSpacing.value) // img를 기준으로 12만큼
             make.trailing.equalToSuperview().inset(Constant.Numeric.vertiSpacing.value)
         }
+        
+        selectionStyle = .none
     }
     
     override func prepareForReuse() {

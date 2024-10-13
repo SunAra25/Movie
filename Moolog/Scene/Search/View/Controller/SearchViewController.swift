@@ -52,14 +52,77 @@ final class SearchViewController: BaseNavigationViewController {
                 return searchText
             }
         
+        let tvSelected = trendingTableView.tableView.rx.modelSelected(SectionItem.self)
+            .map { item in
+                switch item {
+                case .movies(let data):
+                    return data.id
+                default:
+                    return nil
+                }
+            }
+            .compactMap { $0 }
+        
+        let cvDataSource = makeCollectionViewDataSource()
+        let tvDataSource = makeTableViewDataSource()
+        
         let input = SearchViewModel.Input(
             viewWillAppear: rx.viewWillAppear,
             searchedText: searchedText,
             seachCancelled: searchController.searchBar.rx.cancelButtonClicked
-                .map { _ in () }
+                .map { _ in () },
+            cvSelectedCell: collectionView.rx.itemSelected
+                .map { cvDataSource[0].items[$0.item].id },
+            tvSelectedCell: tvSelected
         )
         let output = viewModel.transform(input: input)
+
+        output.trendMovie
+            .drive(trendingTableView.tableView.rx.items(dataSource: tvDataSource))
+            .disposed(by: disposeBag)
         
+        output.searchedDataSources
+            .drive(collectionView.rx.items(dataSource: cvDataSource))
+            .disposed(by: disposeBag)
+        
+        output.isSearched
+            .drive(with: self) { owner, isSearched in
+                if isSearched {
+                    owner.trendingTableView.isHidden = true
+                    owner.collectionView.isHidden = false
+                } else {
+                    owner.trendingTableView.isHidden = false
+                    owner.collectionView.isHidden = true
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        output.selectedMediaID
+            .drive(with: self) { _, mediaID in
+                print(mediaID)
+//                let vc =
+//                owner.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+    }
+    
+    override func setHierarchy() {
+        [trendingTableView, collectionView]
+            .forEach { view.addSubview($0) }
+    }
+    
+    override func setConstraints() {
+        trendingTableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    private func makeCollectionViewDataSource()
+    -> RxCollectionViewSectionedReloadDataSource<SearchMovieSectionModel> {
         let dataSource = RxCollectionViewSectionedReloadDataSource
         <SearchMovieSectionModel> { _, collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(
@@ -82,9 +145,14 @@ final class SearchViewController: BaseNavigationViewController {
             return header
         }
         
+        return dataSource
+    }
+    
+    private func makeTableViewDataSource()
+    -> RxTableViewSectionedReloadDataSource<SearchTrendingSectionModel> {
         let tableDataSource = RxTableViewSectionedReloadDataSource
         <SearchTrendingSectionModel> { _, tableView, indexPath, item in
-            tableView.rowHeight = indexPath.row == 0 ? 60 : 110
+            tableView.rowHeight = indexPath.row == 0 ? 50 : 110
             
             switch item {
             case .header(let title):
@@ -111,40 +179,7 @@ final class SearchViewController: BaseNavigationViewController {
                 return cell
             }
         }
-
-        output.trendMovie
-            .drive(trendingTableView.tableView.rx.items(dataSource: tableDataSource))
-            .disposed(by: disposeBag)
-        
-        output.searchedDataSources
-            .drive(collectionView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-        
-        output.isSearched
-            .drive(with: self) { owner, isSearched in
-                if isSearched {
-                    owner.trendingTableView.isHidden = true
-                    owner.collectionView.isHidden = false
-                } else {
-                    owner.trendingTableView.isHidden = false
-                    owner.collectionView.isHidden = true
-                }
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    override func setHierarchy() {
-        [trendingTableView, collectionView]
-            .forEach { view.addSubview($0) }
-    }
-    
-    override func setConstraints() {
-        trendingTableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
-        }
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
-        }
+        return tableDataSource
     }
 }
 
