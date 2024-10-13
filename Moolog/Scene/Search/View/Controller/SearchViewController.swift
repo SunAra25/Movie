@@ -14,7 +14,7 @@ import SnapKit
 
 final class SearchViewController: BaseNavigationViewController {
     var disposeBag: DisposeBag = DisposeBag()
-    private var searchController: UISearchController = {
+    private let searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.placeholder = "시리즈 및 영화를 검색해보세요"
         return search
@@ -35,8 +35,8 @@ final class SearchViewController: BaseNavigationViewController {
         )
         return view
     }()
-    private lazy var trendingTableView = MediaTableView()
-    private var emptyLabel: UILabel = {
+    private let trendingTableView = MediaTableView()
+    private let emptyLabel: UILabel = {
         let label = UILabel()
         label.text = "검색 결과가 없습니다."
         label.textColor = .white
@@ -107,12 +107,9 @@ final class SearchViewController: BaseNavigationViewController {
             .disposed(by: disposeBag)
         
         output.selectedMediaID
-            .drive(with: self) { _, mediaID in
-                print(mediaID)
-//                let vc = owner.navigationController?.pushViewController(
-//                    <#T##viewController: UIViewController##UIViewController#>,
-//                    animated: true
-//                )
+            .drive(with: self) { owner, mediaID in
+                let vc = MediaDetailViewController(movieID: mediaID)
+                owner.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
         
@@ -216,7 +213,7 @@ extension SearchViewController {
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(
-            top: 5,
+            top: 0,
             leading: 5,
             bottom: 5,
             trailing: 5
@@ -233,14 +230,7 @@ extension SearchViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 10,
-            leading: 10,
-            bottom: 10,
-            trailing: 10
-        )
-        section.interGroupSpacing = 10
-
+        
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(44)
