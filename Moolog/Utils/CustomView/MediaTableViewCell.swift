@@ -11,12 +11,12 @@ import Kingfisher
 import SnapKit
 
 final class MediaTableViewCell: BaseTableViewCell {
-    private lazy var posterView: UIImageView = {
+    private var posterView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         return view
     }()
-    private lazy var mediaTitleLabel: UILabel = {
+    private var mediaTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
         label.font = .body1
@@ -56,7 +56,7 @@ final class MediaTableViewCell: BaseTableViewCell {
     }
     
     func configureUI(posterImg: String, mediaTitle: String) {
-        posterView.kf.setImage(with: URL(string: posterImg))
+        posterView.image = FileStorage.loadImageToDocument(filename: posterImg)
         mediaTitleLabel.text = mediaTitle
     }
 }
