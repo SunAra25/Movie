@@ -127,21 +127,19 @@ final class TrendViewController: BaseNavigationViewController {
             .disposed(by: disposeBag)
         
         output.selectedMovieID
-            .drive(with: self) { _, id in
+            .drive(with: self) { owner, id in
                 print(id)
-//                let vc = MediaDetailViewController(movieID: id)
-//                vc.modalPresentationStyle = .fullScreen
-//                show(nav, sender: self)
+                let vc = MediaDetailViewController(movieID: id)
+                owner.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
-        output.selectedSeriesID
-            .drive(with: self) { _, id in
-                print(id)
+//        output.selectedSeriesID
+//            .drive(with: self) { owner, id in
+//                print(id)
 //                let vc = MediaDetailViewController(movieID: id)
-//                vc.modalPresentationStyle = .fullScreen
-//                show(nav, sender: self)
-            }
-            .disposed(by: disposeBag)
+//                owner.present(vc, animated: true)
+//            }
+//            .disposed(by: disposeBag)
     }
     
     override func setHierarchy() {
