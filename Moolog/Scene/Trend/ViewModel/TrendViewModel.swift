@@ -101,35 +101,28 @@ final class TrendViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         input.saveBtnTap
-            .bind { _ in
-                print("클릭!!!!!")
+            .withLatestFrom(randomContent)
+            .bind(with: self) { owner, value in
+                DispatchQueue.main.async {
+                    let fav = owner.favRepository.fetchData()
+                    
+                    if fav.contains(where: { $0.id ==  value.id }) {
+                        showAlert.accept(Constant.AlertTitle.already.rawValue)
+                    } else {
+                        showAlert.accept(Constant.AlertTitle.saved.rawValue)
+                        FileStorage.saveImageToDocument(
+                            image: value.posterPath,
+                            filename: "\(value.id)"
+                        )
+                        owner.favRepository.createItem(FavoriteMovie(
+                            id: value.id,
+                            title: value.title)
+                        )
+                    }
+                }
             }
             .disposed(by: disposeBag)
-        
-        Observable.combineLatest(
-            input.saveBtnTap,
-            randomContent
-        ).bind(with: self) { owner, value in
-            let fav = owner.favRepository.fetchData()
-            if fav.contains(where: { $0.id ==  value.1.id }) {
-                showAlert.accept(Constant.AlertTitle.already.rawValue)
-                
-            } else {
-                showAlert.accept(Constant.AlertTitle.saved.rawValue)
-                DispatchQueue.main.async {
-                    FileStorage.saveImageToDocument(
-                        image: value.1.posterPath,
-                        filename: "\(value.1.id)"
-                    )
-                }
-                owner.favRepository.createItem(FavoriteMovie(
-                    id: value.1.id,
-                    title: value.1.title)
-                )
-            }
-        }
-        .disposed(by: disposeBag)
-        
+  
         return Output(
             serachBtnTap: input.searchBtnTap.asDriver(onErrorJustReturn: ()),
             movieList: movieList.asDriver(onErrorJustReturn: []),
