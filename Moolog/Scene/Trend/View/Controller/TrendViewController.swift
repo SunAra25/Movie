@@ -12,7 +12,7 @@ import RxSwift
 import SnapKit
 
 final class TrendViewController: BaseNavigationViewController {
-    lazy var searchButton: UIBarButtonItem = {
+    private lazy var searchButton: UIBarButtonItem = {
         let button = UIBarButtonItem(
             image: UIImage(systemName: "magnifyingglass"),
             style: .plain,
@@ -100,11 +100,12 @@ final class TrendViewController: BaseNavigationViewController {
         let output = viewModel.transform(input: input)
         
         output.serachBtnTap
-            .drive(with: self) { _, _ in
+            .drive(with: self) { owner, _ in
                 let vc = SearchViewController()
-                self.navigationController?.pushViewController(vc, animated: true)
+                owner.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
+        
         output.randomMovie
             .drive(onNext: { [weak self] movie in
                 self?.mainPosterView.configureUI(movie)
@@ -120,6 +121,7 @@ final class TrendViewController: BaseNavigationViewController {
                 cell.configureUI(element)
             }
             .disposed(by: disposeBag)
+        
         output.seriesList
             .drive(seriesCollectionView.rx.items(
                 cellIdentifier: TrendSeriesCollectionViewCell.identifier,
@@ -136,6 +138,7 @@ final class TrendViewController: BaseNavigationViewController {
                 owner.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
+        
         output.alertString
             .drive(with: self) { owner, value in
                 owner.showAlert(title: value)

@@ -12,8 +12,8 @@ import RxSwift
 
 final class TrendViewModel: ViewModelType {
     var disposeBag: DisposeBag = DisposeBag()
-    let networkManager: NetworkType
-    let favRepository = FavoriteMovieRepository()
+    private let networkManager: NetworkType
+    private let favRepository = FavoriteMovieRepository()
     
     init(networkManager: NetworkType) {
         self.networkManager = networkManager

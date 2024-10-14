@@ -14,13 +14,16 @@ enum MediaType: String, PersistableEnum {
     case series
 }
 
-class FavoriteMovie: Object {
+final class FavoriteMovie: Object {
     @Persisted(primaryKey: true) var id: Int
     @Persisted var title: String
     @Persisted var createDate: Date
     @Persisted var mediaType: MediaType
     
-    convenience init(id: Int, title: String) {
+    convenience init(
+        id: Int,
+        title: String
+    ) {
         self.init()
         self.id = id
         self.title = title
