@@ -73,7 +73,7 @@ final class MainPosterView: BaseView {
         genreLabel.text = "애니메이션 가족 코미디 드라마"
     }
     func configureUI(_ data: TrendingMovie) {
-        let url = "https://image.tmdb.org/t/p/original/" + data.posterPath
+        let url = URLConstant.imageURL + data.posterPath
         imageView.kf.setImage(with: URL(string: url))
     }
 }

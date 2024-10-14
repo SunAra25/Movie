@@ -28,7 +28,7 @@ final class SimilarCollectionViewCell: BaseCollectionViewCell {
     
     func configureUI(_ data: SimilarResult) {
         guard let posterPath = data.posterPath else { return }
-        let url = "https://image.tmdb.org/t/p/original/" + posterPath
+        let url = URLConstant.imageURL + posterPath
         posterImageView.kf.setImage(with: URL(string: url))
     }
 }

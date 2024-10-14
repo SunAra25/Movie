@@ -26,7 +26,7 @@ final class TrendSeriesCollectionViewCell: BaseCollectionViewCell {
     }
 
     func configureUI(_ data: TrendingTV) {
-        let url = "https://image.tmdb.org/t/p/original/" + data.posterPath
+        let url = URLConstant.imageURL + data.posterPath
         posterImageView.kf.setImage(with: URL(string: url))
     }
 }
