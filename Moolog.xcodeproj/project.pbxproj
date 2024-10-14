@@ -175,14 +175,6 @@
 			path = FileStorage;
 			sourceTree = "<group>";
 		};
-		A062A7652CBC3CF900C8E87D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A062A7632CBC354500C8E87D /* MainPosterView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		C057BCDB2CBC3158003DEBE8 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,7 +478,7 @@
 		C9A2EA2C2CB6C5D200F99900 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A062A7652CBC3CF900C8E87D /* View */,
+				A062A7632CBC354500C8E87D /* MainPosterView.swift */,
 				C9A2EA312CB6C5F300F99900 /* Cell */,
 				C9A2EA2D2CB6C5D700F99900 /* Controller */,
 			);
