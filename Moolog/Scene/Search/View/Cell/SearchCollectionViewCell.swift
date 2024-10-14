@@ -21,6 +21,7 @@ final class SearchCollectionViewCell: BaseCollectionViewCell {
     
     override func setUI() {
         contentView.addSubview(posterImg)
+        contentView.backgroundColor = .black
     }
     
     override func setLayout() {

@@ -33,6 +33,7 @@ final class SearchViewController: BaseNavigationViewController {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: SearchCollectionHeaderView.identifier
         )
+        view.backgroundColor = .clear
         return view
     }()
     private let trendingTableView = MediaTableView()

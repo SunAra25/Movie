@@ -47,7 +47,7 @@ final class CreditCollectionViewCell: BaseCollectionViewCell {
     
     func configureUI(_ data: Cast) {
         guard let profilePath = data.profilePath else { return }
-        let url = "https://image.tmdb.org/t/p/original/" + profilePath
+        let url = URLConstant.imageURL + profilePath
         imageView.kf.setImage(with: URL(string: url))
         nameLabel.text = data.originalName
     }
