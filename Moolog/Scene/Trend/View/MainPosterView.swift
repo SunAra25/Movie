@@ -12,12 +12,12 @@ import RxSwift
 import SnapKit
 
 final class MainPosterView: BaseView {
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 28
         view.clipsToBounds = true
-        view.isUserInteractionEnabled = true
+//        view.isUserInteractionEnabled = true
         return view
     }()
     private let genreLabel: UILabel = {
@@ -42,9 +42,9 @@ final class MainPosterView: BaseView {
     )
     override func setLayout() {
         self.addSubview(imageView)
-        imageView.addSubview(genreLabel)
-        imageView.addSubview(playButton)
-        imageView.addSubview(saveButton)
+        self.addSubview(genreLabel)
+        self.addSubview(playButton)
+        self.addSubview(saveButton)
         
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
