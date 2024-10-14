@@ -70,7 +70,6 @@
 		C9A2EA272CB6C58F00F99900 /* FavoriteCell in Resources */ = {isa = PBXBuildFile; fileRef = C9A2EA262CB6C58F00F99900 /* FavoriteCell */; };
 		C9FBC3562CB6574A00EBAE11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */; };
 		C9FBC3582CB6574A00EBAE11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */; };
-		C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FBC3592CB6574A00EBAE11 /* ViewController.swift */; };
 		C9FBC35F2CB6574A00EBAE11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9FBC35E2CB6574A00EBAE11 /* Assets.xcassets */; };
 		C9FBC3622CB6574A00EBAE11 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C9FBC3612CB6574A00EBAE11 /* Base */; };
 /* End PBXBuildFile section */
@@ -134,7 +133,6 @@
 		C9FBC3522CB6574A00EBAE11 /* Moolog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moolog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FBC3552CB6574A00EBAE11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9FBC3572CB6574A00EBAE11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9FBC3592CB6574A00EBAE11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C9FBC35E2CB6574A00EBAE11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9FBC3612CB6574A00EBAE11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9FBC3632CB6574A00EBAE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -549,7 +547,6 @@
 				A0221B052CB917B800FCFE9F /* DB */,
 				C9A2E9EB2CB6C20F00F99900 /* Utils */,
 				C9A2E9EA2CB6C20600F99900 /* Resources */,
-				C9FBC3592CB6574A00EBAE11 /* ViewController.swift */,
 			);
 			path = Moolog;
 			sourceTree = "<group>";
@@ -651,7 +648,6 @@
 				A0221B0B2CB935B200FCFE9F /* FavoriteMovieRepository.swift in Sources */,
 				C02BAA8E2CBC1411008502B6 /* ViewModelType.swift in Sources */,
 				C086B1EE2CBB934400AAEE54 /* CreditCollectionViewCell.swift in Sources */,
-				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
 				A0221B072CB92E5B00FCFE9F /* FavoriteMovie.swift in Sources */,
 				C91BDB002CBBA39A001E0595 /* SearchViewController.swift in Sources */,
 				A062A7672CBC483600C8E87D /* TrendSeriesCollectionViewCell.swift in Sources */,
@@ -660,7 +656,6 @@
 				C0925C1B2CB957C9007EF2D5 /* CreditsResponse.swift in Sources */,
 				C91BDAF92CBB7434001E0595 /* Reactive+.swift in Sources */,
 				C0925C0E2CB93737007EF2D5 /* Header.swift in Sources */,
-				C9FBC35A2CB6574A00EBAE11 /* ViewController.swift in Sources */,
 				C086B1F02CBB9C1500AAEE54 /* SimilarCollectionViewCell.swift in Sources */,
 				C0925C152CB954EF007EF2D5 /* TrendingMovieResponse.swift in Sources */,
 				C98CD6F32CB81FC4005361D5 /* HTTPMethod.swift in Sources */,
