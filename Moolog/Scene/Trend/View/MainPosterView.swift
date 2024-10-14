@@ -17,6 +17,7 @@ final class MainPosterView: BaseView {
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 28
         view.clipsToBounds = true
+        view.isUserInteractionEnabled = true
         return view
     }()
     private let genreLabel: UILabel = {
@@ -71,6 +72,7 @@ final class MainPosterView: BaseView {
         
         // MARK: TEST
         genreLabel.text = "애니메이션 가족 코미디 드라마"
+        
     }
     func configureUI(_ data: TrendingMovie) {
         let url = URLConstant.imageURL + data.posterPath

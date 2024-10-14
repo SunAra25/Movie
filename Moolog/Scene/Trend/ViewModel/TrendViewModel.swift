@@ -13,6 +13,7 @@ import RxSwift
 final class TrendViewModel: ViewModelType {
     var disposeBag: DisposeBag = DisposeBag()
     let networkManager: NetworkType
+    let favRepository = FavoriteMovieRepository()
     
     init(networkManager: NetworkType) {
         self.networkManager = networkManager
@@ -23,6 +24,7 @@ final class TrendViewModel: ViewModelType {
         let searchBtnTap: Observable<Void>
         let movieSelectedCell: Observable<Int>
         let seriesSelectedCell: Observable<Int>
+        let saveBtnTap: Observable<Void>
     }
     struct Output {
         let serachBtnTap: Driver<Void>
@@ -31,15 +33,16 @@ final class TrendViewModel: ViewModelType {
         let randomMovie: Driver<TrendingMovie>
         let selectedMovieID: Driver<Int>
         let selectedSeriesID: Driver<Int>
+        let alertString: Driver<String>
     }
     
     func transform(input: Input) -> Output {
         let movieList = PublishRelay<[TrendingMovie]>()
         let seriesList = PublishRelay<[TrendingTV]>()
         let randomContent = PublishRelay<TrendingMovie>()
-        
         let selectedMovieID = PublishRelay<Int>()
         let selectedSeriesID = PublishRelay<Int>()
+        let showAlert = PublishRelay<String>()
         
         input.viewWillAppear
             .flatMap { [weak self] _ in
@@ -66,7 +69,7 @@ final class TrendViewModel: ViewModelType {
                     trendSeriesResult
                 )
             }
-            .bind(with: self) { owner, results in
+            .bind(with: self) { _, results in
                 let (
                     trendMovieResult,
                     trendSeriesResult
@@ -75,7 +78,8 @@ final class TrendViewModel: ViewModelType {
                 switch trendMovieResult {
                 case .success(let movie):
                     movieList.accept(movie.results)
-                    randomContent.accept(movie.results[Int.random(in: 0...9)])
+                    let randMovie = movie.results[Int.random(in: 0...9)]
+                    randomContent.accept(randMovie)
                 case .failure(let error):
                     print(error)
                 }
@@ -96,6 +100,36 @@ final class TrendViewModel: ViewModelType {
             .bind(to: selectedSeriesID)
             .disposed(by: disposeBag)
         
+        input.saveBtnTap
+            .bind { _ in
+                print("클릭!!!!!")
+            }
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(
+            input.saveBtnTap,
+            randomContent
+        ).bind(with: self) { owner, value in
+            let fav = owner.favRepository.fetchData()
+            if fav.contains(where: { $0.id ==  value.1.id }) {
+                showAlert.accept(Constant.AlertTitle.already.rawValue)
+                
+            } else {
+                showAlert.accept(Constant.AlertTitle.saved.rawValue)
+                DispatchQueue.main.async {
+                    FileStorage.saveImageToDocument(
+                        image: value.1.posterPath,
+                        filename: "\(value.1.id)"
+                    )
+                }
+                owner.favRepository.createItem(FavoriteMovie(
+                    id: value.1.id,
+                    title: value.1.title)
+                )
+            }
+        }
+        .disposed(by: disposeBag)
+        
         return Output(
             serachBtnTap: input.searchBtnTap.asDriver(onErrorJustReturn: ()),
             movieList: movieList.asDriver(onErrorJustReturn: []),
@@ -108,7 +142,8 @@ final class TrendViewModel: ViewModelType {
                 )
             ),
             selectedMovieID: selectedMovieID.asDriver(onErrorJustReturn: 0),
-            selectedSeriesID: selectedSeriesID.asDriver(onErrorJustReturn: 0)
+            selectedSeriesID: selectedSeriesID.asDriver(onErrorJustReturn: 0), 
+            alertString: showAlert.asDriver(onErrorJustReturn: "")
         )
     }
 }

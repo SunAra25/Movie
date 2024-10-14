@@ -94,7 +94,8 @@ final class TrendViewController: BaseNavigationViewController {
             movieSelectedCell: movieCollectionView.rx.modelSelected(TrendingMovie.self)
                 .map { $0.id },
             seriesSelectedCell: seriesCollectionView.rx.modelSelected(TrendingTV.self)
-                .map { $0.id }
+                .map { $0.id }, 
+            saveBtnTap: self.mainPosterView.saveButton.rx.tap.asObservable()
         )
         let output = viewModel.transform(input: input)
         
@@ -106,9 +107,11 @@ final class TrendViewController: BaseNavigationViewController {
             .disposed(by: disposeBag)
         output.randomMovie
             .drive(onNext: { [weak self] movie in
-                        self?.mainPosterView.configureUI(movie)
-                    })
+                self?.mainPosterView.configureUI(movie)
+                
+            })
             .disposed(by: disposeBag)
+        
         output.movieList
             .drive(movieCollectionView.rx.items(
                 cellIdentifier: TrendMovieCollectionViewCell.identifier,
@@ -131,6 +134,11 @@ final class TrendViewController: BaseNavigationViewController {
                 print(id)
                 let vc = MediaDetailViewController(movieID: id)
                 owner.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+        output.alertString
+            .drive(with: self) { owner, value in
+                owner.showAlert(title: value)
             }
             .disposed(by: disposeBag)
 //        output.selectedSeriesID
@@ -192,5 +200,24 @@ final class TrendViewController: BaseNavigationViewController {
     override func setNavigation() {
         super.setNavigation()
         navigationItem.rightBarButtonItem = searchButton
+    }
+}
+
+extension TrendViewController {
+    
+    func showAlert(title: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: nil,
+            preferredStyle: .alert
+        )
+        let okay = UIAlertAction(
+            title: "확인",
+            style: .default
+        )
+        
+        alert.addAction(okay)
+        
+        present(alert, animated: true)
     }
 }
