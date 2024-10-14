@@ -29,7 +29,7 @@ final class TabBarController: UITabBarController {
             [.foregroundColor: UIColor.clear],
             for: .selected
         )
-        
+
         let trendVC = UINavigationController(rootViewController: TrendViewController())
         let searchVC = UINavigationController(rootViewController: SearchViewController())
         let favoriteVC = UINavigationController(

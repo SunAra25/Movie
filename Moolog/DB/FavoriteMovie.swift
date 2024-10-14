@@ -20,7 +20,7 @@ class FavoriteMovie: Object {
     @Persisted var createDate: Date
     @Persisted var mediaType: MediaType
     
-    convenience init(id:Int, title: String) {
+    convenience init(id: Int, title: String) {
         self.init()
         self.id = id
         self.title = title
