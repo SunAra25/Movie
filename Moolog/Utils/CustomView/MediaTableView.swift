@@ -22,6 +22,7 @@ final class MediaTableView: BaseView {
             forCellReuseIdentifier: MediaTableHeaderCell.identifier
         )
         view.rowHeight = 110
+        view.backgroundColor = .clear
         return view
     }()
     

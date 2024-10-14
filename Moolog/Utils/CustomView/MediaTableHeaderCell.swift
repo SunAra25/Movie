@@ -29,6 +29,7 @@ final class MediaTableHeaderCell: BaseTableViewCell {
         }
         
         selectionStyle = .none
+        contentView.backgroundColor = .black
     }
     
     func setUI(title: String) {

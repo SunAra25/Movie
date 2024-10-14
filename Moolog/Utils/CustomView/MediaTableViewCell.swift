@@ -49,6 +49,7 @@ final class MediaTableViewCell: BaseTableViewCell {
         }
         
         selectionStyle = .none
+        contentView.backgroundColor = .black
     }
     
     override func prepareForReuse() {

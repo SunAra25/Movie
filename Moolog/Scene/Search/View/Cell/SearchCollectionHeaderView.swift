@@ -20,6 +20,7 @@ final class SearchCollectionHeaderView: BaseCollectionViewCell {
     
     override func setUI() {
         contentView.addSubview(headerLabel)
+        contentView.backgroundColor = .black
     }
     
     override func setLayout() {
