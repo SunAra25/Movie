@@ -14,6 +14,8 @@ final class SearchCollectionViewCell: BaseCollectionViewCell {
     private var posterImg: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
+        view.layer.cornerRadius = Constant.Numeric.vertiSpacing.value
+        view.clipsToBounds = true
         return view
     }()
     
@@ -29,5 +31,14 @@ final class SearchCollectionViewCell: BaseCollectionViewCell {
     
     func setImage(posterPath: String) {
         posterImg.kf.setImage(with: URL(string: URLConstant.imageURL + posterPath))
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        posterImg.image = nil
+        posterImg.layer.cornerRadius = Constant.Numeric.vertiSpacing.value
+        posterImg.clipsToBounds = true
+        posterImg.contentMode = .scaleAspectFill
     }
 }

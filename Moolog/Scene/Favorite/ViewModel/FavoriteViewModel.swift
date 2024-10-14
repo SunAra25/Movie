@@ -44,7 +44,9 @@ final class FavoriteViewModel: ViewModelType {
         
         input.deleteCell
             .bind(with: self) { owner, index in
-//                FileStorage.removeImageFromDocument(filename: medias.value[index].id)
+                FileStorage.removeImageFromDocument(
+                    filename: String(medias.value[index].id)
+                )
                 owner.favRepository.deleteItem(medias.value[index].id)
                 
                 let favMedia = owner.favRepository.fetchData()

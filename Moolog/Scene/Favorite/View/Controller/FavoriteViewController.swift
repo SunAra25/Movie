@@ -13,7 +13,7 @@ import SnapKit
 
 final class FavoriteViewController: BaseNavigationViewController {
     var disposeBag = DisposeBag()
-    private var favTableView = MediaTableView()
+    private let favTableView = MediaTableView()
     private let viewModel = FavoriteViewModel()
     
     override func bind() {
@@ -37,6 +37,12 @@ final class FavoriteViewController: BaseNavigationViewController {
             }
             .disposed(by: disposeBag)
         
+        output.selectedMediaID
+            .drive(with: self) { owner, mediaID in
+                let vc = MediaDetailViewController(movieID: mediaID)
+                owner.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     override func setNavigation() {
