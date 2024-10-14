@@ -17,7 +17,6 @@ final class MainPosterView: BaseView {
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 28
         view.clipsToBounds = true
-//        view.isUserInteractionEnabled = true
         return view
     }()
     private let genreLabel: UILabel = {
