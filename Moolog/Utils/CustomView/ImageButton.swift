@@ -8,21 +8,24 @@
 import UIKit
 
 final class ImageButton: UIButton {
-    let title: String
-    let image: UIImage
-    let titleColor: UIColor
-    let backColor: UIColor
+    let title: String?
+    let image: UIImage?
+    let foreColor: UIColor
+    let backColor: UIColor?
+    let radius: CGFloat?
     
     init(
-        title: String,
-        image: UIImage,
-        titleColor: UIColor,
-        backColor: UIColor
+        title: String? = nil,
+        image: UIImage?,
+        foreColor: UIColor,
+        backColor: UIColor? = nil,
+        radius: CGFloat? = nil
     ) {
         self.title = title
         self.image = image
-        self.titleColor = titleColor
+        self.foreColor = foreColor
         self.backColor = backColor
+        self.radius = radius
         super.init(frame: .zero)
         
         configureButton()
@@ -34,16 +37,22 @@ final class ImageButton: UIButton {
     
     private func configureButton() {
         var config = UIButton.Configuration.plain()
-        var attr = AttributedString.init(title)
-        attr.font = .button
+        if let title {
+            var attr = AttributedString.init(title)
+            attr.font = .button
+            config.attributedTitle = attr
+        }
         
-        config.attributedTitle = attr
         config.image = image
+        config.imagePadding = 6
         
         configuration = config
         backgroundColor = backColor
+        tintColor = foreColor
         
-        layer.cornerRadius = 12
-        layer.masksToBounds = true
+        if let radius {
+            layer.cornerRadius = radius
+            layer.masksToBounds = true
+        }
     }
 }

@@ -29,10 +29,12 @@ final class TabBarController: UITabBarController {
             [.foregroundColor: UIColor.clear],
             for: .selected
         )
-        
-        let trendVC = UIViewController()
-        let searchVC = UIViewController()
-        let favoriteVC = UIViewController()
+
+        let trendVC = UINavigationController(rootViewController: TrendViewController())
+        let searchVC = UINavigationController(rootViewController: SearchViewController())
+        let favoriteVC = UINavigationController(
+            rootViewController: FavoriteViewController()
+        )
         
         trendVC.tabBarItem = UITabBarItem(
             title: nil,
@@ -40,13 +42,13 @@ final class TabBarController: UITabBarController {
             tag: 0
         )
         
-        searchVC.tabBarItem = UITabBarItem(
+        favoriteVC.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "heart.fill"),
             tag: 1
         )
         
-        favoriteVC.tabBarItem = UITabBarItem(
+        searchVC.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(systemName: "magnifyingglass"),
             tag: 2
